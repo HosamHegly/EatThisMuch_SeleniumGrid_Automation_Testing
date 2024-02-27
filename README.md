@@ -24,11 +24,13 @@ A running instance of Selenium Grid
 ### Setup
 Clone the repository:
 
-git clone https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing.git
+* git clone https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing.git
 
-Install required Python packages:
-pip install -r requirements.txt
-Ensure Selenium Grid is up and running. For instructions on setting up Selenium Grid, visit Selenium's official documentation.
+* Install required Python packages:
+
+* pip install -r requirements.txt
+
+* Ensure Selenium Grid is up and running. For instructions on setting up Selenium Grid, visit Selenium's official documentation.
 
 ### Configuration
 * Edit the config.json file to specify your desired testing environment. Available options include:
