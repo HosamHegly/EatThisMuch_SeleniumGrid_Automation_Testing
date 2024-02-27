@@ -45,7 +45,9 @@ Clone the repository:
 
 ### Running Tests
 To execute tests, run the following command from the project Test directory:
-python test_runner.py
+
+<img width="602" alt="image" src="https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing/assets/57544654/5b9ee943-5ca2-4b5f-b1ac-09ad32d57caf">
+
 
 ## Contributing
 Contributions to the EatThisMuch Selenium Grid Automation Testing project are welcome. Please follow the contributing guide for more information on submitting pull requests.
