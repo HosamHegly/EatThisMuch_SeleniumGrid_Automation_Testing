@@ -31,15 +31,15 @@ pip install -r requirements.txt
 Ensure Selenium Grid is up and running. For instructions on setting up Selenium Grid, visit Selenium's official documentation.
 
 ### Configuration
-Edit the config.json file to specify your desired testing environment. Available options include:
+* Edit the config.json file to specify your desired testing environment. Available options include:
+  
+* browser: The web browser to use for tests (e.g., "chrome", "firefox").
+* 
+* platform: The operating system platform (e.g., "WINDOWS", "LINUX").
 
-browser: The web browser to use for tests (e.g., "chrome", "firefox").
+* execution_mode: Run tests in "parallel" or "serial".
 
-platform: The operating system platform (e.g., "WINDOWS", "LINUX").
-
-execution_mode: Run tests in "parallel" or "serial".
-
-driver: Choose between "grid" for Selenium Grid or "regular" for local WebDriver.
+* driver: Choose between "grid" for Selenium Grid or "regular" for local WebDriver.
 
 ### Running Tests
 To execute tests, run the following command from the project Test directory:
