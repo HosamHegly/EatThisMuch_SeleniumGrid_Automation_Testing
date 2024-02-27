@@ -34,7 +34,7 @@ Ensure Selenium Grid is up and running. For instructions on setting up Selenium 
 * Edit the config.json file to specify your desired testing environment. Available options include:
   
 * browser: The web browser to use for tests (e.g., "chrome", "firefox").
-* 
+  
 * platform: The operating system platform (e.g., "WINDOWS", "LINUX").
 
 * execution_mode: Run tests in "parallel" or "serial".
