@@ -46,7 +46,7 @@ Clone the repository:
 ### Running Tests
 To execute tests, run the following command from the project Test directory:
 
-<img width="602" alt="image" src="https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing/assets/57544654/5b9ee943-5ca2-4b5f-b1ac-09ad32d57caf">
+<img width="207" alt="image" src="https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing/assets/57544654/7da7716f-814d-40bd-8a54-58babf9941c0">
 
 
 ## Contributing
