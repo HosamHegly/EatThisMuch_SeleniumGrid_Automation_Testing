@@ -9,6 +9,7 @@ valid_users = [
 invalid_users = [
     {"name": "invalid", "email": "invalidUser@test.com", "password": "qwert1235"},
     {"name": "Saeed", "email": "saeedesawi@test.com", "password": "afj322rfe"},
+    {"name":"tzahi", "email": "saeedesawi@test.com", "password": "afj322rfe"}
 
 ]
 
