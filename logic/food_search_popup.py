@@ -1,0 +1,112 @@
+import time
+from telnetlib import EC
+
+from selenium.webdriver import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import wait
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from selenium.common.exceptions import *
+
+from infra.base_page import BasePage
+
+
+class FoodSearchPopup():
+    SEARCH_FIELD = (By.XPATH, "//input[@type='search']")
+    MIN_CALORIES_INPUT = (By.XPATH, "//input[@aria-label='Min Calories']")
+    MAX_CALORIES_INPUT = (By.XPATH, "//input[@aria-label='Max Calories']")
+    SEARCH_RESULTS_BUTTONS = (By.XPATH, "//ul[@class='svelte-142zban']//li//button")
+    INGREDIENTS = (By.XPATH, "//div[./h3[contains(text(),'Ingredients')]]//span[@class='food-name _class_1x8vs_1 "
+                             "svelte-ncaeor']")
+    INGREDIENTS_TITLE = (By.XPATH, "//h3[contains(text(),'Ingredients')]")
+    SEARCH_RESULT_FOOD_NAMES = (By.XPATH, "//span[@class='name svelte-rcnuic']")
+    RESULT_CALORIES = (By.XPATH, "//dt[text()='Calories']/following-sibling::dd[@class='svelte-1qloymj']")
+
+    def __init__(self, driver):
+        self._driver = driver
+        self.init_elements()
+
+    def init_elements(self):
+        WebDriverWait(self._driver, 10).until(lambda x: x.find_element(*self.MAX_CALORIES_INPUT))
+
+        self.search_field = self._driver.find_element(*self.SEARCH_FIELD)
+        self.max_calories = self._driver.find_element(*self.MAX_CALORIES_INPUT)
+        self.min_calories = self._driver.find_element(*self.MIN_CALORIES_INPUT)
+
+    def init_result_calories(self):
+        self.result_calories = WebDriverWait(self._driver, 5).until(
+            lambda x: x.find_element(*self.RESULT_CALORIES))
+
+    def fill_search_field(self, text):
+        self.search_field.send_keys(text)
+
+    def fill_min_calories_filter(self, min):
+        WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.MIN_CALORIES_INPUT)).click()
+        self.min_calories.clear()
+        self.min_calories.send_keys(min)
+
+    def fill_max_calories_filter(self, max):
+        WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.MAX_CALORIES_INPUT)).click()
+        self.max_calories.clear()
+        self.max_calories.send_keys(max)
+        time.sleep(3)
+
+    def init_ingredients(self):
+        self.ingredients_names = self._driver.find_elements(*self.INGREDIENTS)
+
+    def init_search_result_food(self):
+        WebDriverWait(self._driver, 10).until(lambda x: x.find_element(*self.SEARCH_RESULTS_BUTTONS))
+        self.search_result_food_buttons = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
+        self.search_result_food_names = self._driver.find_elements(*self.SEARCH_RESULT_FOOD_NAMES)
+
+    def click_search_result_button_by_index(self, index):
+        if index < len(self.search_result_food_buttons) > 0:
+            self.search_result_food_buttons[index].click()
+        else:
+            raise IndexError("Search result index out of bound or no search results list is empty")
+
+    def get_ingredient_list_as_text(self):
+        names = []
+        for ingredient in self.ingredients_names:
+            names.append(ingredient.text.lower())
+        return names
+
+    def get_all_results_food_names_and_ingredients(self):
+        self.init_search_result_food()
+        index = 0
+        food_list = []
+
+        for search_result_button in self.search_result_food_buttons:
+
+            search_result_button.click()
+            time.sleep(1)
+            if self.is_food_result_contains_ingredients():
+                self.init_ingredients()
+                ingredient_list = self.get_ingredient_list_as_text()
+            else:
+                ingredient_list = []
+
+            food_list.append({'name': self.search_result_food_names[index].text.lower(), 'ingredient': ingredient_list})
+            index += 1
+
+        return food_list
+
+    def is_food_result_contains_ingredients(self):
+
+        if len(self._driver.find_elements(*self.INGREDIENTS)) > 0:
+            return True
+        return False
+
+    def get_all_search_results_calories(self):
+        self.init_search_result_food()
+        all_results_calories = []
+        for search_result_button in self.search_result_food_buttons:
+            search_result_button.click()
+            self.init_result_calories()
+            all_results_calories.append(int(self.result_calories.text))
+        return all_results_calories
+
+    def is_results_empty(self):
+        results_list = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
+        return len(results_list)==0
