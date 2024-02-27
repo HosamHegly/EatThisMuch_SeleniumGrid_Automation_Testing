@@ -24,17 +24,19 @@ A running instance of Selenium Grid
 ### Setup
 Clone the repository:
 
-git clone https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing.git
+* git clone https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing.git
 
-Install required Python packages:
-pip install -r requirements.txt
-Ensure Selenium Grid is up and running. For instructions on setting up Selenium Grid, visit Selenium's official documentation.
+* Install required Python packages:
+
+* pip install -r requirements.txt
+
+* Ensure Selenium Grid is up and running. For instructions on setting up Selenium Grid, visit Selenium's official documentation.
 
 ### Configuration
 * Edit the config.json file to specify your desired testing environment. Available options include:
   
 * browser: The web browser to use for tests (e.g., "chrome", "firefox").
-* 
+  
 * platform: The operating system platform (e.g., "WINDOWS", "LINUX").
 
 * execution_mode: Run tests in "parallel" or "serial".
@@ -43,7 +45,9 @@ Ensure Selenium Grid is up and running. For instructions on setting up Selenium 
 
 ### Running Tests
 To execute tests, run the following command from the project Test directory:
-python test_runner.py
+
+<img width="207" alt="image" src="https://github.com/HosamHegly/EatThisMuch_SeleniumGrid_Automation_Testing/assets/57544654/7da7716f-814d-40bd-8a54-58babf9941c0">
+
 
 ## Contributing
 Contributions to the EatThisMuch Selenium Grid Automation Testing project are welcome. Please follow the contributing guide for more information on submitting pull requests.
