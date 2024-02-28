@@ -30,7 +30,6 @@ class FoodSearchPopup():
 
     def init_elements(self):
         WebDriverWait(self._driver, 10).until(lambda x: x.find_element(*self.MAX_CALORIES_INPUT))
-
         self.search_field = self._driver.find_element(*self.SEARCH_FIELD)
         self.max_calories = self._driver.find_element(*self.MAX_CALORIES_INPUT)
         self.min_calories = self._driver.find_element(*self.MIN_CALORIES_INPUT)

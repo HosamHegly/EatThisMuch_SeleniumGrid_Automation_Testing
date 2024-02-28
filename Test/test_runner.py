@@ -8,7 +8,7 @@ from os.path import dirname, join
 from Test.login_page_test import LoginPageTest
 from Test.planner_page_edit_day_test import MealEditTest
 from Test.search_food_popup_test import FoodSearchPopupTest
-from create_custom_food_test import *  # Import the test case
+from nutritional_target_test import *  # Import the test case
 from infra.browser_wrapper import BrowserWrapper
 
 
@@ -19,13 +19,12 @@ def get_filename(filename):
 
 
 def run_tests_for_browser(browser):
-    MealEditTest.browser = browser
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(MealEditTest)
+    NutritionalTargetsTest.browser = browser
+    test_suite = unittest.TestLoader().loadTestsFromTestCase(NutritionalTargetsTest)
     unittest.TextTestRunner().run(test_suite)
 
 
 if __name__ == "__main__":
-
     filename = get_filename("../config.json")
     with open(filename, 'r') as file:
         config = json.load(file)

@@ -10,12 +10,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from infra.base_page import BasePage
 
 
-
 class LoginPage(BasePage):
     EMAIL_FIELD = (By.ID, "username")
     PASSWORD_FIELD = (By.XPATH, "//input[@autocomplete='password']")
     LOGIN_BUTTON = (By.XPATH, "//button[@type='submit']")
     ERROR_MESSAGE = "//div[@class='warning svelte-1vdzk1k']"
+
     def __init__(self, driver):
         super().__init__(driver)
         self.init_elements()
@@ -39,6 +39,7 @@ class LoginPage(BasePage):
     def clear_input_fields(self):
         self.email_field.clear()
         self.password_field.clear()
+
     def is_main_page_title(self):
         return WebDriverWait(self._driver, 10).until(EC.title_contains('Today'))
 

@@ -12,12 +12,12 @@ from infra.browser_wrapper import BrowserWrapper
 from logic.food_search_popup import FoodSearchPopup
 from logic.login_page import LoginPage
 from logic.planner_page import PlannerPage
-from Utils.food import search_food_names
+from Utils.food import *
 from Utils.users import *
 
 
 class MealEditTest(unittest.TestCase):
-    Food_Names = search_food_names
+    Food_Names = valid_search_food_names
     USER = get_valid_user('Hosam')
 
     def setUp(self):
