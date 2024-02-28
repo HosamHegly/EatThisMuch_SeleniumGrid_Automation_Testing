@@ -33,7 +33,7 @@ class LoginPageTest(unittest.TestCase):
             self.assertTrue(self.login_page.is_main_page_title())
 
 
-    '''def test_login_with_valid_user(self):
+    def test_login_with_valid_user(self):
         for user in self.INVALID_USERS:
             self.login_page.login_with_email_password(user['email'],user['password'])
             try:
@@ -42,7 +42,7 @@ class LoginPageTest(unittest.TestCase):
                 self.login_page.clear_input_fields()
 
             except TimeoutException:
-                self.fail("Error message was not found within the given time")'''
+                self.fail("Error message was not found within the given time")
 
 
 

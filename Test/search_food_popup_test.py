@@ -28,8 +28,7 @@ class FoodSearchPopupTest(unittest.TestCase):
         self.planner_page = PlannerPage(self.driver)
         self.planner_page.click_add_food_to_meal_button('Breakfast')
 
-
-    '''def test_search_food_with_valid_food_name(self):
+    def test_search_food_with_valid_food_name(self):
         self.food_search_popup = FoodSearchPopup(self.driver)
         food_name = "apple"
         self.food_search_popup.fill_search_field("apple")
@@ -45,8 +44,10 @@ class FoodSearchPopupTest(unittest.TestCase):
         self.food_search_popup.fill_min_calories_filter(min_calories)
         self.food_search_popup.fill_max_calories_filter(max_calories)
         for calories in self.food_search_popup.get_all_search_results_calories():
-            self.assertGreaterEqual(calories,min_calories,"Food result calories is less than the minumum calories input in the filter")
-            self.assertLessEqual(calories,max_calories,"Food result calories is greater than the max calories input in the filter")'''
+            self.assertGreaterEqual(calories, min_calories,
+                                    "Food result calories is less than the minumum calories input in the filter")
+            self.assertLessEqual(calories, max_calories,
+                                 "Food result calories is greater than the max calories input in the filter")
 
     def test_search_food_with_invalid_food_name(self):
         self.food_search_popup = FoodSearchPopup(self.driver)
@@ -54,6 +55,6 @@ class FoodSearchPopupTest(unittest.TestCase):
         self.food_search_popup.fill_search_field(invalid_food_name)
         self.assertTrue(self.food_search_popup.is_results_empty())
 
-
     def tearDown(self):
+
         self.browser_wrapper.close_browser()

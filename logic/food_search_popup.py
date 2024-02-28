@@ -22,6 +22,7 @@ class FoodSearchPopup():
     INGREDIENTS_TITLE = (By.XPATH, "//h3[contains(text(),'Ingredients')]")
     SEARCH_RESULT_FOOD_NAMES = (By.XPATH, "//span[@class='name svelte-rcnuic']")
     RESULT_CALORIES = (By.XPATH, "//dt[text()='Calories']/following-sibling::dd[@class='svelte-1qloymj']")
+    ADD_FOOD_BUTTON = (By.XPATH,"//span[text()='Add']")
 
     def __init__(self, driver):
         self._driver = driver
@@ -38,8 +39,12 @@ class FoodSearchPopup():
         self.result_calories = WebDriverWait(self._driver, 5).until(
             lambda x: x.find_element(*self.RESULT_CALORIES))
 
+    def init_add_food_button(self):
+        self.add_food_button = self._driver.find_element(*self.ADD_FOOD_BUTTON)
+
     def fill_search_field(self, text):
         self.search_field.send_keys(text)
+        time.sleep(1)
 
     def fill_min_calories_filter(self, min):
         WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.MIN_CALORIES_INPUT)).click()
@@ -61,6 +66,7 @@ class FoodSearchPopup():
         self.search_result_food_names = self._driver.find_elements(*self.SEARCH_RESULT_FOOD_NAMES)
 
     def click_search_result_button_by_index(self, index):
+        self.init_search_result_food()
         if index < len(self.search_result_food_buttons) > 0:
             self.search_result_food_buttons[index].click()
         else:
@@ -107,6 +113,24 @@ class FoodSearchPopup():
             all_results_calories.append(int(self.result_calories.text))
         return all_results_calories
 
+    def def_choose_food_by_index_list(self,index):
+        self.init_search_result_food()
+        self.search_result_food_buttons[0].click()
+
+    def get_current_food_calories(self):
+        self.init_result_calories()
+        return self.result_calories.text
+
+    def add_current_food_to_meal(self):
+        self.init_add_food_button()
+        self.add_food_button.click()
+
+
+
     def is_results_empty(self):
         results_list = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
         return len(results_list)==0
+
+    def clear_search_field(self):
+        self.search_field.clear()
+
