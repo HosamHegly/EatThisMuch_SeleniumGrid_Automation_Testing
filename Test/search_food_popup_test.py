@@ -13,11 +13,13 @@ from infra.browser_wrapper import BrowserWrapper
 from logic.food_search_popup import FoodSearchPopup
 from logic.login_page import LoginPage
 from logic.planner_page import PlannerPage
-from Utils import users
+from Utils import users, food
 
 
 class FoodSearchPopupTest(unittest.TestCase):
     USER = users.get_valid_user('Hosam')
+    VALID_FOOD = food.valid_search_food_names
+    INVALID_FOOD = food.invalid_search_food_names
 
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
@@ -30,12 +32,13 @@ class FoodSearchPopupTest(unittest.TestCase):
 
     def test_search_food_with_valid_food_name(self):
         self.food_search_popup = FoodSearchPopup(self.driver)
-        food_name = "apple"
-        self.food_search_popup.fill_search_field("apple")
+        for food_name in self.VALID_FOOD:
+            self.food_search_popup.fill_search_field(food_name)
 
-        all_food_results = self.food_search_popup.get_all_results_food_names_and_ingredients()
-        for food in all_food_results:
-            self.assertTrue(food_name in food['name'] or is_contained_in(food_name, food['ingredients']))
+            all_food_results = self.food_search_popup.get_all_results_food_names_and_ingredients()
+            for food in all_food_results:
+                self.assertTrue(food_name in food['name'] or is_contained_in(food_name, food['ingredient']))
+            self.food_search_popup.clear_search_field()
 
     def test_calorie_filter_feature(self):
         self.food_search_popup = FoodSearchPopup(self.driver)
@@ -51,9 +54,10 @@ class FoodSearchPopupTest(unittest.TestCase):
 
     def test_search_food_with_invalid_food_name(self):
         self.food_search_popup = FoodSearchPopup(self.driver)
-        invalid_food_name = "invalid food"
-        self.food_search_popup.fill_search_field(invalid_food_name)
-        self.assertTrue(self.food_search_popup.is_results_empty())
+        for invalid_food_name in self.INVALID_FOOD:
+            self.food_search_popup.fill_search_field(invalid_food_name)
+            self.assertTrue(self.food_search_popup.is_results_empty())
+            self.food_search_popup.clear_search_field()
 
     def tearDown(self):
 

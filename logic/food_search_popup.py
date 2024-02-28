@@ -43,7 +43,7 @@ class FoodSearchPopup():
 
     def fill_search_field(self, text):
         self.search_field.send_keys(text)
-        time.sleep(1)
+
 
     def fill_min_calories_filter(self, min):
         WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.MIN_CALORIES_INPUT)).click()
@@ -57,10 +57,13 @@ class FoodSearchPopup():
         time.sleep(3)
 
     def init_ingredients(self):
+        WebDriverWait(self._driver, 10).until(EC.presence_of_element_located(self.INGREDIENTS))
+
         self.ingredients_names = self._driver.find_elements(*self.INGREDIENTS)
 
     def init_search_result_food(self):
-        WebDriverWait(self._driver, 10).until(lambda x: x.find_element(*self.SEARCH_RESULTS_BUTTONS))
+        WebDriverWait(self._driver, 5).until(lambda x: x.find_elements(*self.SEARCH_RESULTS_BUTTONS))
+        time.sleep(3)
         self.search_result_food_buttons = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
         self.search_result_food_names = self._driver.find_elements(*self.SEARCH_RESULT_FOOD_NAMES)
 
@@ -85,7 +88,7 @@ class FoodSearchPopup():
         for search_result_button in self.search_result_food_buttons:
 
             search_result_button.click()
-            time.sleep(1)
+            time.sleep(0.5)
             if self.is_food_result_contains_ingredients():
                 self.init_ingredients()
                 ingredient_list = self.get_ingredient_list_as_text()
@@ -108,6 +111,7 @@ class FoodSearchPopup():
         all_results_calories = []
         for search_result_button in self.search_result_food_buttons:
             search_result_button.click()
+            time.sleep(0.5)
             self.init_result_calories()
             all_results_calories.append(int(self.result_calories.text))
         return all_results_calories

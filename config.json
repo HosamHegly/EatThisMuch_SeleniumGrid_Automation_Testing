@@ -3,6 +3,7 @@
   "url":"https://www.eatthismuch.com/app/login",
   "grid": false,
   "parallel": false,
+  "serial": false,
   "browser": "chrome",
   "platform": "windows",
   "browser_types": ["chrome", "firefox"]

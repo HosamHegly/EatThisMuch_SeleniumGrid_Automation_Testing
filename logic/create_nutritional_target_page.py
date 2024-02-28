@@ -60,6 +60,9 @@ class CreateNutritionalTargetPage(BasePage):
         self.max_fats.send_keys(max_fats)
 
         self.max_proteins.send_keys(max_proteins)
+        self.save_button.click()
+
+
 
     def clear_all_inputs(self):
         self.title.clear()
@@ -71,6 +74,7 @@ class CreateNutritionalTargetPage(BasePage):
         self.max_carbs.clear()
         self.max_fats.clear()
         self.max_proteins.clear()
+
 
     def save_target(self):
         self.save_button.click()

@@ -31,7 +31,7 @@ class PlannerPage(BasePage):
         if not self.is_meal_generated():
             self.generate_button = self._driver.find_element(*self.GENERATE_BUTTON)
             try:
-                WebDriverWait(self._driver, 10).until(EC.ele(self.GENERATE_BUTTON)).click()
+                WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.GENERATE_BUTTON)).click()
                 self.wait_for_element_in_page_by_xpath(self.MEALS_TITLE)
             except:
                 ElementNotInteractableException("can't click on Generate button")
@@ -59,16 +59,8 @@ class PlannerPage(BasePage):
         formated_string_locator = self.add_food_button_by_meal_locator(meal)
         if meal not in ('Breakfast', 'Dinner', 'Lunch', 'Snack'):
             raise ValueError("invalid meal name input should be 'breakfast','dinner','lunch' or 'snack'")
-        try:
-            self.wait_for_element_in_page_by_xpath(formated_string_locator)
 
-            WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.add_food_button))
-
-        except:
-            NoSuchElementException(f"add button for meal {meal} not found")
-            ElementNotInteractableException("can't click on add food button")
-
-        self.add_food_button = self._driver.find_element(By.XPATH, formated_string_locator)
+        self.add_food_button=WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable((By.XPATH, formated_string_locator)))
 
     def is_edit_day_button_active(self):
         return 'active' in self.edit_day.get_attribute("class")
