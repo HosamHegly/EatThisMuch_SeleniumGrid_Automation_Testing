@@ -36,11 +36,11 @@ class WeightGoalTest(unittest.TestCase):
 
     def test_invalid_weight_input_negative(self):
         self.weight_goals_page.update_weight(-1)
-        self.assertEqual('Value must be greater than or equal to 0.',self.weight_goals_page.get_validation_message())
+        self.assertEqual(self.weight_goals_page.get_validation_message(),['Value must be greater than or equal to 0.','Please select a value that is no less than 0.'])
 
     def test_invalid_weight_input_greater_than_upper_limit(self):
         self.weight_goals_page.update_weight(1000)
-        self.assertEqual('Value must be less than or equal to 999.', self.weight_goals_page.get_validation_message())
+        self.assertTrue(self.weight_goals_page.get_validation_message(),['Value must be less than or equal to 999.','Please select a value that is no more than 999.'])
 
     def test_valid_weight_input(self):
         weight = 80

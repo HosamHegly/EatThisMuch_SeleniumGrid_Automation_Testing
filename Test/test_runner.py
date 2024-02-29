@@ -58,7 +58,6 @@ if __name__ == "__main__":
         config = json.load(file)
     is_parallel = config["parallel"]
     is_serial = config["serial"]
-    is_grid = config["grid"]
     browsers = config["browser_types"]
     if is_parallel:
         dived_tests_parallel_non_parallel(test_cases)

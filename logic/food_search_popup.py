@@ -63,7 +63,7 @@ class FoodSearchPopup():
 
     def init_search_result_food(self):
         WebDriverWait(self._driver, 5).until(lambda x: x.find_elements(*self.SEARCH_RESULTS_BUTTONS))
-        time.sleep(2)
+        time.sleep(3)
         self.search_result_food_buttons = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
         self.search_result_food_names = self._driver.find_elements(*self.SEARCH_RESULT_FOOD_NAMES)
 
@@ -131,6 +131,7 @@ class FoodSearchPopup():
 
 
     def is_results_empty(self):
+        time.sleep(2)
         results_list = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
         return len(results_list)==0
 

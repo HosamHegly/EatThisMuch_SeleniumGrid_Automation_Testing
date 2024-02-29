@@ -42,6 +42,7 @@ class NutritionalTargetPage(BasePage):
         self.create_target.save_target()
 
     def go_to_create_target(self):
+        self.init_elements()
         self.target_button.click()
 
     def get_target_titles(self):

@@ -21,11 +21,11 @@ class BrowserWrapper:
             self.driver.fullscreen_window()
 
         else:
-            if browser_type.lower() == 'chrome':
+            if browser.lower() == 'chrome':
                 self.driver = webdriver.Chrome()
-            elif browser_type.lower() == 'firefox':
+            elif browser.lower() == 'firefox':
                 self.driver = webdriver.Firefox()
-            elif browser_type.lower() == 'edge':
+            elif browser.lower() == 'edge':
                 self.driver = webdriver.Edge()
         url = self.config["url"]
         self.driver.get(url)
