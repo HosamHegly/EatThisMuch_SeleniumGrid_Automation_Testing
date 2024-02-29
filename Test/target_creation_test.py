@@ -55,6 +55,7 @@ class CreateTargetTest(unittest.TestCase):
     import Utils.users
 
 class CreateNutritionalTargetsTest(unittest.TestCase):
+    _non_parallel = True
     VALID_TARGETS = valid_targets
     INVALID_TARGETS = invalid_target
     USER = get_valid_user('Hosam')

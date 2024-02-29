@@ -1,13 +1,10 @@
-import concurrent.futures.thread
-import time
 
 import selenium
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 import unittest
-import json
-
+import time
 from Utils.helper_functions import calculate_macro_calories
 from infra.browser_wrapper import BrowserWrapper
 from logic.create_nutritional_target_page import CreateNutritionalTargetPage
@@ -32,7 +29,6 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
         self.login_page.login_with_email_password(self.USER['email'], self.USER['password'])
         time.sleep(2)
         self.nutritional_targets_page = NutritionalTargetPage(self.driver)
-
 
 
     def test_adjust_invalid_macros(self):

@@ -1,5 +1,3 @@
-import concurrent.futures.thread
-import time
 
 import selenium
 from selenium import webdriver
@@ -17,6 +15,7 @@ from Utils.users import *
 
 
 class MealEditTest(unittest.TestCase):
+    _non_parallel = True
     Food_Names = valid_search_food_names
     USER = get_valid_user('Hosam')
 

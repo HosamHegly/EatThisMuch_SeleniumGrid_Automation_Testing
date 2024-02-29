@@ -2,7 +2,7 @@
   "hub" : "http://10.0.0.34:4444",
   "url":"https://www.eatthismuch.com/app/login",
   "grid": false,
-  "parallel": false,
+  "parallel": true,
   "serial": false,
   "browser": "chrome",
   "platform": "windows",

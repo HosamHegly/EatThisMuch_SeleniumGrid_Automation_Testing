@@ -1,5 +1,4 @@
 import concurrent.futures.thread
-import time
 
 import selenium
 from selenium import webdriver
