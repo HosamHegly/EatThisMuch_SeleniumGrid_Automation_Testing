@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.common.exceptions import *
 
-from infra.base_page import BasePage
+from Infra.base_page import BasePage
 
 
 class PlannerPage(BasePage):

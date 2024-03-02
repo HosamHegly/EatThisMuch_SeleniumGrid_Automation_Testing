@@ -1,4 +1,3 @@
-
 import selenium
 from selenium import webdriver
 from selenium.webdriver import Keys
@@ -6,15 +5,16 @@ from selenium.webdriver.common.by import By
 import unittest
 import time
 from Utils.helper_functions import calculate_macro_calories
-from infra.browser_wrapper import BrowserWrapper
-from logic.create_nutritional_target_page import CreateNutritionalTargetPage
-from logic.food_search_popup import FoodSearchPopup
-from logic.login_page import LoginPage
-from logic.menu import Menu
-from logic.nutritional_target_page import NutritionalTargetPage
-from logic.planner_page import PlannerPage
+from Infra.browser_wrapper import BrowserWrapper
+from Logic.create_nutritional_target_page import CreateNutritionalTargetPage
+from Logic.food_search_popup import FoodSearchPopup
+from Logic.login_page import LoginPage
+from Logic.menu import Menu
+from Logic.nutritional_target_page import NutritionalTargetPage
+from Logic.planner_page import PlannerPage
 from Utils.calorie_target import *
 from Utils.users import *
+from Utils.urls import urls
 
 
 class NutritionalTargetsValuesTest(unittest.TestCase):
@@ -25,11 +25,10 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
         self.driver = self.browser_wrapper.get_driver(browser=self.__class__.browser)
-        self.login_page = LoginPage(self.driver)
-        self.login_page.login_with_email_password(self.USER['email'], self.USER['password'])
-        time.sleep(2)
-        self.nutritional_targets_page = NutritionalTargetPage(self.driver)
 
+        self.browser_wrapper.add_browser_cookie()
+        self.browser_wrapper.goto(urls['Nutritional_Target'])
+        self.nutritional_targets_page = NutritionalTargetPage(self.driver)
 
     def test_adjust_invalid_macros(self):
         self.nutritional_targets_page.go_to_create_target()
@@ -51,7 +50,6 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
             self.assertGreaterEqual(target['calories'],
                                     calculate_macro_calories(min_max_proteins[0], min_max_fats[0], min_max_carbs[0]))
             self.create_targets_page.clear_all_inputs()
-
 
     def tearDown(self):
         self.browser_wrapper.close_browser()

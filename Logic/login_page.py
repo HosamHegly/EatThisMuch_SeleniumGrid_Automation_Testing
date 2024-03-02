@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import *
 from selenium.webdriver.support import expected_conditions as EC
 
-from infra.base_page import BasePage
+from Infra.base_page import BasePage
 
 
 class LoginPage(BasePage):

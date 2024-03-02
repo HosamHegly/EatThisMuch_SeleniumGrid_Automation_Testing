@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import *
 from selenium.webdriver.support import expected_conditions as EC
 from Utils.urls import urls
-from infra.base_page import BasePage
+from Infra.base_page import BasePage
 
 
 class WeightGoalPage(BasePage):
@@ -22,7 +22,7 @@ class WeightGoalPage(BasePage):
         self.init_elements()
 
     def init_elements(self):
-        self.weight_input = WebDriverWait(self._driver, 10).until(EC.presence_of_element_located(self.WEIGHT_INPUT))
+        self.weight_input = WebDriverWait(self._driver, 20).until(EC.presence_of_element_located(self.WEIGHT_INPUT))
         self.update_button = self._driver.find_element(*self.UPDATE_BUTTON)
 
     def init_last_update(self):

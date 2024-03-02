@@ -9,16 +9,17 @@ import unittest
 import json
 
 from Utils.helper_functions import calculate_macro_calories
-from infra.browser_wrapper import BrowserWrapper
-from logic.create_nutritional_target_page import CreateNutritionalTargetPage
-from logic.food_search_popup import FoodSearchPopup
-from logic.login_page import LoginPage
-from logic.menu import Menu
-from logic.nutritional_target_page import NutritionalTargetPage
-from logic.planner_page import PlannerPage
+from Infra.browser_wrapper import BrowserWrapper
+from Logic.create_nutritional_target_page import CreateNutritionalTargetPage
+from Logic.food_search_popup import FoodSearchPopup
+from Logic.login_page import LoginPage
+from Logic.menu import Menu
+from Logic.nutritional_target_page import NutritionalTargetPage
+from Logic.planner_page import PlannerPage
 from Utils.calorie_target import *
 from Utils.users import *
-from logic.weight_goal_page import WeightGoalPage
+from Logic.weight_goal_page import WeightGoalPage
+from Utils.urls import urls
 
 
 class WeightGoalTest(unittest.TestCase):
@@ -29,18 +30,19 @@ class WeightGoalTest(unittest.TestCase):
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
         self.driver = self.browser_wrapper.get_driver(browser=self.__class__.browser)
-        self.login_page = LoginPage(self.driver)
-        self.login_page.login_with_email_password(self.USER['email'], self.USER['password'])
+        self.browser_wrapper.add_browser_cookie()
+        self.browser_wrapper.goto(urls['Weight_Goal'])
         time.sleep(2)
+
         self.weight_goals_page = WeightGoalPage(self.driver)
 
     def test_invalid_weight_input_negative(self):
         self.weight_goals_page.update_weight(-1)
-        self.assertEqual(self.weight_goals_page.get_validation_message(),['Value must be greater than or equal to 0.','Please select a value that is no less than 0.'])
+        self.assertTrue(self.weight_goals_page.get_validation_message() in['Value must be greater than or equal to 0.','Please select a value that is no less than 0.'])
 
     def test_invalid_weight_input_greater_than_upper_limit(self):
         self.weight_goals_page.update_weight(1000)
-        self.assertTrue(self.weight_goals_page.get_validation_message(),['Value must be less than or equal to 999.','Please select a value that is no more than 999.'])
+        self.assertTrue(self.weight_goals_page.get_validation_message() in['Value must be less than or equal to 999.','Please select a value that is no more than 999.'])
 
     def test_valid_weight_input(self):
         weight = 80

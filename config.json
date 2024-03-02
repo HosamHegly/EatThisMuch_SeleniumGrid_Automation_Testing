@@ -1,6 +1,6 @@
 {
   "hub" : "http://10.0.0.34:4444",
-  "url":"https://www.eatthismuch.com/app/login",
+  "url":"https://www.eatthismuch.com/app/planner/today",
   "grid": false,
   "parallel": true,
   "serial": false,

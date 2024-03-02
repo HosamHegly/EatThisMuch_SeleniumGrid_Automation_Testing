@@ -10,10 +10,10 @@ import unittest
 import json
 
 from Utils import users
-from infra.browser_wrapper import BrowserWrapper
-from logic.food_search_popup import FoodSearchPopup
-from logic.login_page import LoginPage
-from logic.planner_page import PlannerPage
+from Infra.browser_wrapper import BrowserWrapper
+from Logic.food_search_popup import FoodSearchPopup
+from Logic.login_page import LoginPage
+from Logic.planner_page import PlannerPage
 from Utils.helper_functions import *
 
 

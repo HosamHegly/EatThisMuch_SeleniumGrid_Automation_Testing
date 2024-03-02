@@ -8,11 +8,12 @@ import unittest
 import json
 
 from Utils.helper_functions import is_contained_in
-from infra.browser_wrapper import BrowserWrapper
-from logic.food_search_popup import FoodSearchPopup
-from logic.login_page import LoginPage
-from logic.planner_page import PlannerPage
+from Infra.browser_wrapper import BrowserWrapper
+from Logic.food_search_popup import FoodSearchPopup
+from Logic.login_page import LoginPage
+from Logic.planner_page import PlannerPage
 from Utils import users, food
+from Utils.urls import urls
 
 
 class FoodSearchPopupTest(unittest.TestCase):
@@ -23,9 +24,9 @@ class FoodSearchPopupTest(unittest.TestCase):
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
         self.driver = self.browser_wrapper.get_driver(browser=self.__class__.browser)
-        self.login_page = LoginPage(self.driver)
 
-        self.login_page.login_with_email_password(self.USER['email'], self.USER['password'])
+        self.browser_wrapper.add_browser_cookie()
+        self.browser_wrapper.goto(urls['Planner_Page'])
         self.planner_page = PlannerPage(self.driver)
         self.planner_page.click_add_food_to_meal_button('Breakfast')
 

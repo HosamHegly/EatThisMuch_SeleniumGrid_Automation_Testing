@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import *
 from selenium.webdriver.support import expected_conditions as EC
 from Utils.urls import urls
-from infra.base_page import BasePage
+from Infra.base_page import BasePage
 
 
 class CreateNutritionalTargetPage(BasePage):
@@ -65,7 +65,6 @@ class CreateNutritionalTargetPage(BasePage):
 
 
     def clear_all_inputs(self):
-        self.title.clear()
         self.fiber.clear()
         self.calories.clear()
         self.min_carbs.clear()
@@ -74,6 +73,8 @@ class CreateNutritionalTargetPage(BasePage):
         self.max_carbs.clear()
         self.max_fats.clear()
         self.max_proteins.clear()
+        self.title.clear()
+
 
 
     def save_target(self):

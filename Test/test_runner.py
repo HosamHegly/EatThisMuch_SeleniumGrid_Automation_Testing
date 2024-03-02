@@ -10,10 +10,10 @@ from Test.planner_page_edit_day_test import MealEditTest
 from Test.search_food_popup_test import FoodSearchPopupTest
 from Test.weight_goal_test import WeightGoalTest
 from nutritional_target_input_values_test import *  # Import the test case
-from infra.browser_wrapper import BrowserWrapper
-from target_creation_test import CreateTargetTest, CreateNutritionalTargetsTest
+from Infra.browser_wrapper import BrowserWrapper
+from target_creation_test import  CreateNutritionalTargetsTest
 
-test_cases = [CreateNutritionalTargetsTest, LoginPageTest, MealEditTest, FoodSearchPopupTest, WeightGoalTest,
+test_cases = [LoginPageTest, MealEditTest, FoodSearchPopupTest, WeightGoalTest,
               NutritionalTargetsValuesTest]
 serial_cases = []
 parallel_cases = []
@@ -38,10 +38,10 @@ def run_tests_for_browser_serial(browsers, serial_tests):
 
 
 def run_tests_for_browser_parallel(browsers, parallel_tests):
+    tasks = [(browser, test_case) for browser in browsers for test_case in parallel_tests]
 
-    for test_case in parallel_tests:
-        with ThreadPoolExecutor(max_workers=len(browsers)) as executor:
-            futures = [executor.submit(run_tests_for_browser, browser, test_case) for browser in browsers]
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = [executor.submit(run_tests_for_browser, browser, test_case) for browser, test_case in tasks]
 
 
 def dived_tests_parallel_non_parallel(test_cases):

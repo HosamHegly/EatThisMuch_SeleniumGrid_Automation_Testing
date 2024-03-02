@@ -2,7 +2,7 @@ from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from infra.base_page import BasePage
+from Infra.base_page import BasePage
 
 
 class Menu(BasePage):

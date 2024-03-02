@@ -7,8 +7,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import *
 from selenium.webdriver.support import expected_conditions as EC
 from Utils.urls import urls
-from infra.base_page import BasePage
-from logic.create_nutritional_target_page import CreateNutritionalTargetPage
+from Infra.base_page import BasePage
+from Logic.create_nutritional_target_page import CreateNutritionalTargetPage
 
 
 class NutritionalTargetPage(BasePage):

@@ -6,24 +6,27 @@ from selenium.webdriver.common.by import By
 import unittest
 import json
 
-from infra.browser_wrapper import BrowserWrapper
-from logic.food_search_popup import FoodSearchPopup
-from logic.login_page import LoginPage
-from logic.planner_page import PlannerPage
+from Infra.browser_wrapper import BrowserWrapper
+from Logic.food_search_popup import FoodSearchPopup
+from Logic.login_page import LoginPage
+from Logic.planner_page import PlannerPage
 from Utils.food import *
 from Utils.users import *
-
+from Utils import cookies
+from Utils.urls import urls
 
 class MealEditTest(unittest.TestCase):
     _non_parallel = True
     Food_Names = valid_search_food_names
     USER = get_valid_user('Hosam')
-
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
         self.driver = self.browser_wrapper.get_driver(browser=self.__class__.browser)
-        self.login_page = LoginPage(self.driver)
-        self.login_page.login_with_email_password(self.USER['email'], self.USER['password'])
+
+        self.browser_wrapper.add_browser_cookie()
+        self.browser_wrapper.goto(urls['Planner_Page'])
+
+
         self.planner_page = PlannerPage(self.driver)
 
     def test_add_food_to_breakfast_based_on_cals(self):
