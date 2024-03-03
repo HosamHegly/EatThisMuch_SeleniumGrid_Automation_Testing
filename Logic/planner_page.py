@@ -19,6 +19,7 @@ class PlannerPage(BasePage):
     CALORIES = (By.XPATH, "//th[text()='Calories']/following-sibling :: td")
     REGENERATE = (By.XPATH, "//button[@title='Regenerate Day']")
     REGENERATE_POPUP_BUTTON=(By.XPATH,"//button[@class='_interaction_11et8_1 primary svelte-1m78l37']")
+    BREAKFAST_LIST = (By.XPATH, "//section[./header[./h3[text()='Breakfast']]]//span[@class='food-name _class_1x8vs_1 svelte-ncaeor']")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -87,3 +88,15 @@ class PlannerPage(BasePage):
         self.regen_button = WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.REGENERATE))
         self.regen_button.click()
         WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.REGENERATE_POPUP_BUTTON)).click()
+
+
+    def init_breakfast_list(self):
+        self.breakfast_list= self.wait_for_element_in_page_by_xpath(self.BREAKFAST_LIST[1])
+        self.breakfast_list = self._driver.find_elements(*self.BREAKFAST_LIST)
+
+    def get_breakfast_list(self):
+        food_list = []
+        self.init_breakfast_list()
+        for food in self.breakfast_list:
+            food_list.append(food.text.lower())
+        return food_list

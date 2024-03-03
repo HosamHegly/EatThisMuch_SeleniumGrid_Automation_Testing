@@ -25,7 +25,6 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
         self.driver = self.browser_wrapper.get_driver(browser=self.__class__.browser)
-
         self.browser_wrapper.add_browser_cookie()
         self.browser_wrapper.goto(urls['Nutritional_Target'])
         self.nutritional_targets_page = NutritionalTargetPage(self.driver)
@@ -42,6 +41,7 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
                                                    max_carbs=target['max_carbs'],
                                                    max_proteins=target['max_proteins'],
                                                    min_proteins=target['min_proteins'])
+            time.sleep(4)
             min_max_carbs = self.create_targets_page.get_min_max_carbs()
             min_max_fats = self.create_targets_page.get_min_max_fats()
             min_max_proteins = self.create_targets_page.get_min_max_proteins()
@@ -49,7 +49,8 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
                                  calculate_macro_calories(min_max_proteins[1], min_max_fats[1], min_max_carbs[1]))
             self.assertGreaterEqual(target['calories'],
                                     calculate_macro_calories(min_max_proteins[0], min_max_fats[0], min_max_carbs[0]))
-            self.create_targets_page.clear_all_inputs()
 
     def tearDown(self):
+        self.create_targets_page.clear_all_inputs()
+
         self.browser_wrapper.close_browser()

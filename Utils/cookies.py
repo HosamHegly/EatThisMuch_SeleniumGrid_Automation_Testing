@@ -1,28 +1,28 @@
 cookie = [{
     'name': 'sessionid',
-    'value': '39rdh5fs5qdgzmlkk0srvzsnu6s39wa9',  # Replace with the actual session ID from the cookie
+    'value': '39rdh5fs5qdgzmlkk0srvzsnu6s39wa9',
     'path': '/',
-    'domain': 'www.eatthismuch.com',  # Uncomment and set
+    'domain': 'www.eatthismuch.com',
 },
 {
     'name': 'csrftoken',
-    'value': 'hMRqNQEOqVb5risiDAgbJTy2JQuwbicz',  # Replace with the actual session ID from the cookie
+    'value': 'hMRqNQEOqVb5risiDAgbJTy2JQuwbicz',
     'path': '/',
 
-    'domain': 'www.eatthismuch.com',  # Uncomment and set
+    'domain': 'www.eatthismuch.com',
 
 },
 {
     'name': 'loggedin',
-    'value': 'true',  # Replace with the actual session ID from the cookie
+    'value': 'true',
     'path': '/',
-    'domain': 'www.eatthismuch.com',  # Uncomment and set
+    'domain': 'www.eatthismuch.com',
 
 }
 ,
 {
     'name': '__stripe_mid',
-    'value': '5513a90c-8b99-4c8f-8b83-639c1f28d9bd8abb04',  # Replace with the actual session ID from the cookie
+    'value': '5513a90c-8b99-4c8f-8b83-639c1f28d9bd8abb04',
     'path': '/',
     'domain': '.www.eatthismuch.com',  # Uncomment and set
 
@@ -38,16 +38,16 @@ cookie = [{
 ,
 {
     'name': '_ga_WJT086Y70E',
-    'value': 'GS1.1.1709199669.2.1.1709201753.0.0.0',  # Replace with the actual session ID from the cookie
+    'value': 'GS1.1.1709199669.2.1.1709201753.0.0.0',
     'path': '/',
     'domain': 'www.eatthismuch.com',  # Uncomment and set
 
 },
 {
     'name': '_ga_JLTLCVXSYF',
-    'value': 'GS1.1.1708787834.1.1.1708788548.0.0.0',  # Replace with the actual session ID from the cookie
+    'value': 'GS1.1.1708787834.1.1.1708788548.0.0.0',
     'path': '/',
-    'domain': 'www.eatthismuch.com',  # Uncomment and set
+    'domain': 'www.eatthismuch.com',
 
 },
 {

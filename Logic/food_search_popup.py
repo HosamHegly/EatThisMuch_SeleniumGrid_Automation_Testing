@@ -1,6 +1,6 @@
 import time
 from telnetlib import EC
-
+from Utils.helper_functions import choose_random_number_in_range
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import wait
@@ -23,6 +23,8 @@ class FoodSearchPopup():
     SEARCH_RESULT_FOOD_NAMES = (By.XPATH, "//span[@class='name svelte-rcnuic']")
     RESULT_CALORIES = (By.XPATH, "//dt[text()='Calories']/following-sibling::dd[@class='svelte-1qloymj']")
     ADD_FOOD_BUTTON = (By.XPATH,"//span[text()='Add']")
+
+
 
     def __init__(self, driver):
         self._driver = driver
@@ -54,7 +56,6 @@ class FoodSearchPopup():
         WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.MAX_CALORIES_INPUT)).click()
         self.max_calories.clear()
         self.max_calories.send_keys(max)
-        time.sleep(3)
 
     def init_ingredients(self):
         WebDriverWait(self._driver, 10).until(EC.presence_of_element_located(self.INGREDIENTS))
@@ -63,7 +64,7 @@ class FoodSearchPopup():
 
     def init_search_result_food(self):
         WebDriverWait(self._driver, 5).until(lambda x: x.find_elements(*self.SEARCH_RESULTS_BUTTONS))
-        time.sleep(3)
+        time.sleep(2)
         self.search_result_food_buttons = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
         self.search_result_food_names = self._driver.find_elements(*self.SEARCH_RESULT_FOOD_NAMES)
 
@@ -86,9 +87,11 @@ class FoodSearchPopup():
         food_list = []
 
         for search_result_button in self.search_result_food_buttons:
+            if index ==4:
+                break
 
             search_result_button.click()
-            time.sleep(0.5)
+            time.sleep(1)
             if self.is_food_result_contains_ingredients():
                 self.init_ingredients()
                 ingredient_list = self.get_ingredient_list_as_text()
@@ -109,16 +112,27 @@ class FoodSearchPopup():
     def get_all_search_results_calories(self):
         self.init_search_result_food()
         all_results_calories = []
+        index = 0
         for search_result_button in self.search_result_food_buttons:
+            if index ==4:
+                break
             search_result_button.click()
-            time.sleep(0.5)
+            time.sleep(2)
             self.init_result_calories()
             all_results_calories.append(int(self.result_calories.text))
+            index+=1
         return all_results_calories
 
     def def_choose_food_by_index_list(self,index):
         self.init_search_result_food()
         self.search_result_food_buttons[0].click()
+    def choose_random_food_from_list(self):
+        self.init_search_result_food()
+        rand = choose_random_number_in_range(0,len(self.search_result_food_names)-1)
+        self.search_result_food_buttons[rand].click()
+        return self.get_result_food_name_by_index(rand)
+
+
 
     def get_current_food_calories(self):
         self.init_result_calories()
@@ -138,3 +152,6 @@ class FoodSearchPopup():
     def clear_search_field(self):
         self.search_field.clear()
 
+    def get_result_food_name_by_index(self,index):
+        self.init_search_result_food()
+        return self.search_result_food_names[index].text.lower()

@@ -20,8 +20,8 @@ serial_cases = []
 
 
 def run_tests_for_browser(browser):
-    FoodSearchPopupTest.browser = browser
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(FoodSearchPopupTest )
+    MealEditTest.browser = browser
+    test_suite = unittest.TestLoader().loadTestsFromTestCase(MealEditTest)
     unittest.TextTestRunner().run(test_suite)
 
 

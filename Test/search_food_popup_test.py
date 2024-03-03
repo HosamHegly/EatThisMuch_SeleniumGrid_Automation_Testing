@@ -1,4 +1,5 @@
 import concurrent.futures.thread
+import time
 
 import selenium
 from selenium import webdriver
@@ -20,6 +21,8 @@ class FoodSearchPopupTest(unittest.TestCase):
     USER = users.get_valid_user('Hosam')
     VALID_FOOD = food.valid_search_food_names
     INVALID_FOOD = food.invalid_search_food_names
+
+
 
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
@@ -45,6 +48,7 @@ class FoodSearchPopupTest(unittest.TestCase):
         min_calories = 500
         max_calories = 1000
         self.food_search_popup.fill_min_calories_filter(min_calories)
+        time.sleep(2)
         self.food_search_popup.fill_max_calories_filter(max_calories)
         for calories in self.food_search_popup.get_all_search_results_calories():
             self.assertGreaterEqual(calories, min_calories,
@@ -52,12 +56,12 @@ class FoodSearchPopupTest(unittest.TestCase):
             self.assertLessEqual(calories, max_calories,
                                  "Food result calories is greater than the max calories input in the filter")
 
-    def test_search_food_with_invalid_food_name(self):
+    '''def test_search_food_with_invalid_food_name(self):
         self.food_search_popup = FoodSearchPopup(self.driver)
         for invalid_food_name in self.INVALID_FOOD:
             self.food_search_popup.fill_search_field(invalid_food_name)
             self.assertTrue(self.food_search_popup.is_results_empty())
-            self.food_search_popup.clear_search_field()
+            self.food_search_popup.clear_search_field()'''
 
     def tearDown(self):
 

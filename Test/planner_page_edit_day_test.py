@@ -1,3 +1,4 @@
+import time
 
 import selenium
 from selenium import webdriver
@@ -29,18 +30,21 @@ class MealEditTest(unittest.TestCase):
 
         self.planner_page = PlannerPage(self.driver)
 
-    def test_add_food_to_breakfast_based_on_cals(self):
+    def test_add_food_to_breakfast(self):
         for food in self.Food_Names:
             self.planner_page.click_add_food_to_meal_button('Breakfast')
             before_total_cals = int(self.planner_page.get_total_calories())
             self.food_search_popup = FoodSearchPopup(self.driver)
             self.food_search_popup.fill_search_field(food)
-            self.food_search_popup.click_search_result_button_by_index(1)
+            food_name=self.food_search_popup.choose_random_food_from_list()
             food_calories = int(self.food_search_popup.get_current_food_calories())
             self.food_search_popup.add_current_food_to_meal()
             after_total_cals = int(self.planner_page.get_total_calories())
+            self.assertTrue(food_name in self.planner_page.get_breakfast_list())
             self.assertAlmostEqual(after_total_cals, before_total_cals + food_calories,
                                    msg="Food calories hasn't beend added to total cals correctly", delta=5)
+            time.sleep(1)
 
     def tearDown(self):
         self.planner_page.regenerate_meal_plan()
+        time.sleep(2)
