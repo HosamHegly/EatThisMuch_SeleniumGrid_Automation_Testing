@@ -43,8 +43,6 @@ class MealEditTest(unittest.TestCase):
             self.assertTrue(food_name in self.planner_page.get_breakfast_list())
             self.assertAlmostEqual(after_total_cals, before_total_cals + food_calories,
                                    msg="Food calories hasn't beend added to total cals correctly", delta=5)
-            time.sleep(1)
 
     def tearDown(self):
         self.planner_page.regenerate_meal_plan()
-        time.sleep(2)

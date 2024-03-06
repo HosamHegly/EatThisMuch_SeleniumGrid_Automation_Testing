@@ -48,7 +48,6 @@ class FoodSearchPopupTest(unittest.TestCase):
         min_calories = 500
         max_calories = 1000
         self.food_search_popup.fill_min_calories_filter(min_calories)
-        time.sleep(2)
         self.food_search_popup.fill_max_calories_filter(max_calories)
         for calories in self.food_search_popup.get_all_search_results_calories():
             self.assertGreaterEqual(calories, min_calories,

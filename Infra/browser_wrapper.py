@@ -16,6 +16,7 @@ class BrowserWrapper:
         with open(filename, 'r') as file:
             self.config = json.load(file)
 
+    #return the webdriver based on the config file options
     def get_driver(self, browser):
         browser_type = self.config["browser"]
         if self.config["grid"]:
@@ -41,7 +42,7 @@ class BrowserWrapper:
     def close_browser(self):
         if self.driver:
             self.driver.close()
-
+    #return browser capabilities based on the browser
     def set_up_capabilities(self, browser_type):
         if browser_type.lower() == 'chrome':
             options = webdriver.ChromeOptions()
@@ -75,7 +76,7 @@ class BrowserWrapper:
 
     def get_browser(self):
         return self.config['browser']
-
+    #add cookies to driver inorder to  skip login
     def add_browser_cookie(self):
         for cookie in self.COOKIE:
             self.driver.add_cookie(cookie)

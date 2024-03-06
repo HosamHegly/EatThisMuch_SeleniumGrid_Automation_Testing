@@ -27,7 +27,6 @@ class NutritionalTargetPage(BasePage):
         self.target_button = self.wait_for_element_in_page_by_xpath(self.CREATE_TARGET_BUTTON[1])
 
     def init_targets(self):
-        time.sleep(3)
         self.wait_for_element_in_page_by_xpath(self.TARGETS[1])
         self.target_titles = self._driver.find_elements(*self.ALL_TARGET_TITLES)
         self.tagets = self._driver.find_elements(*self.TARGETS)

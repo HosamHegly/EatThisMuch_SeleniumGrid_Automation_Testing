@@ -22,9 +22,7 @@ class FoodSearchPopup():
     INGREDIENTS_TITLE = (By.XPATH, "//h3[contains(text(),'Ingredients')]")
     SEARCH_RESULT_FOOD_NAMES = (By.XPATH, "//span[@class='name svelte-rcnuic']")
     RESULT_CALORIES = (By.XPATH, "//dt[text()='Calories']/following-sibling::dd[@class='svelte-1qloymj']")
-    ADD_FOOD_BUTTON = (By.XPATH,"//span[text()='Add']")
-
-
+    ADD_FOOD_BUTTON = (By.XPATH, "//span[text()='Add']")
 
     def __init__(self, driver):
         self._driver = driver
@@ -36,16 +34,18 @@ class FoodSearchPopup():
         self.max_calories = self._driver.find_element(*self.MAX_CALORIES_INPUT)
         self.min_calories = self._driver.find_element(*self.MIN_CALORIES_INPUT)
 
+    # init the chosen food calories
     def init_result_calories(self):
         self.result_calories = WebDriverWait(self._driver, 5).until(
             lambda x: x.find_element(*self.RESULT_CALORIES))
 
+    # init the add food button for the chosen food
     def init_add_food_button(self):
         self.add_food_button = self._driver.find_element(*self.ADD_FOOD_BUTTON)
 
+    # fill te search field with a text
     def fill_search_field(self, text):
         self.search_field.send_keys(text)
-
 
     def fill_min_calories_filter(self, min):
         WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.MIN_CALORIES_INPUT)).click()
@@ -62,6 +62,7 @@ class FoodSearchPopup():
 
         self.ingredients_names = self._driver.find_elements(*self.INGREDIENTS)
 
+    # get the search results after searching for food
     def init_search_result_food(self):
         WebDriverWait(self._driver, 5).until(lambda x: x.find_elements(*self.SEARCH_RESULTS_BUTTONS))
         time.sleep(2)
@@ -75,6 +76,7 @@ class FoodSearchPopup():
         else:
             raise IndexError("Search result index out of bound or no search results list is empty")
 
+    # get the chosen food ingrediants as text
     def get_ingredient_list_as_text(self):
         names = []
         for ingredient in self.ingredients_names:
@@ -87,7 +89,7 @@ class FoodSearchPopup():
         food_list = []
 
         for search_result_button in self.search_result_food_buttons:
-            if index ==4:
+            if index == 4:
                 break
 
             search_result_button.click()
@@ -114,25 +116,23 @@ class FoodSearchPopup():
         all_results_calories = []
         index = 0
         for search_result_button in self.search_result_food_buttons:
-            if index ==4:
+            if index == 4:
                 break
             search_result_button.click()
-            time.sleep(2)
             self.init_result_calories()
             all_results_calories.append(int(self.result_calories.text))
-            index+=1
+            index += 1
         return all_results_calories
 
-    def def_choose_food_by_index_list(self,index):
+    def def_choose_food_by_index_list(self, index):
         self.init_search_result_food()
         self.search_result_food_buttons[0].click()
+
     def choose_random_food_from_list(self):
         self.init_search_result_food()
-        rand = choose_random_number_in_range(0,len(self.search_result_food_names)-1)
+        rand = choose_random_number_in_range(0, len(self.search_result_food_names) - 1)
         self.search_result_food_buttons[rand].click()
         return self.get_result_food_name_by_index(rand)
-
-
 
     def get_current_food_calories(self):
         self.init_result_calories()
@@ -142,16 +142,14 @@ class FoodSearchPopup():
         self.init_add_food_button()
         self.add_food_button.click()
 
-
-
     def is_results_empty(self):
         time.sleep(2)
         results_list = self._driver.find_elements(*self.SEARCH_RESULTS_BUTTONS)
-        return len(results_list)==0
+        return len(results_list) == 0
 
     def clear_search_field(self):
         self.search_field.clear()
 
-    def get_result_food_name_by_index(self,index):
+    def get_result_food_name_by_index(self, index):
         self.init_search_result_food()
         return self.search_result_food_names[index].text.lower()

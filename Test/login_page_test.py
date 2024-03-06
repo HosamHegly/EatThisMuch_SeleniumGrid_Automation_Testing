@@ -26,25 +26,21 @@ class LoginPageTest(unittest.TestCase):
         self.driver = self.browser_wrapper.get_driver(browser=self.__class__.browser)
         self.login_page = LoginPage(self.driver)
 
-
     def test_login_with_valid_user(self):
         for user in self.VALID_USERS:
-            self.login_page.login_with_email_password(user['email'],user['password'])
+            self.login_page.login_with_email_password(user['email'], user['password'])
             self.assertTrue(self.login_page.is_main_page_title())
-
 
     def test_login_with_valid_user(self):
         for user in self.INVALID_USERS:
-            self.login_page.login_with_email_password(user['email'],user['password'])
+            self.login_page.login_with_email_password(user['email'], user['password'])
             try:
                 self.login_page.wait_for_error_message()
-                self.assertIn('enter a correct username and password',self.login_page.get_page_text())
+                self.assertIn('enter a correct username and password', self.login_page.get_page_text())
                 self.login_page.clear_input_fields()
 
             except TimeoutException:
                 self.fail("Error message was not found within the given time")
-
-
 
     def tearDown(self):
         self.browser_wrapper.close_browser()

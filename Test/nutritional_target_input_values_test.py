@@ -20,7 +20,7 @@ from Utils.urls import urls
 class NutritionalTargetsValuesTest(unittest.TestCase):
     VALID_TARGETS = valid_targets
     INVALID_TARGETS = invalid_target
-    USER = get_valid_user('Hosam')
+    USER = valid_targets[0]
 
     def setUp(self):
         self.browser_wrapper = BrowserWrapper()
@@ -29,6 +29,8 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
         self.browser_wrapper.goto(urls['Nutritional_Target'])
         self.nutritional_targets_page = NutritionalTargetPage(self.driver)
 
+    # input invalid values in the macros check if adjust button appears the click on it and check if calories in
+    # macros match target cals
     def test_adjust_invalid_macros(self):
         self.nutritional_targets_page.go_to_create_target()
         for target in self.INVALID_TARGETS:
@@ -41,7 +43,6 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
                                                    max_carbs=target['max_carbs'],
                                                    max_proteins=target['max_proteins'],
                                                    min_proteins=target['min_proteins'])
-            time.sleep(4)
             min_max_carbs = self.create_targets_page.get_min_max_carbs()
             min_max_fats = self.create_targets_page.get_min_max_fats()
             min_max_proteins = self.create_targets_page.get_min_max_proteins()
@@ -54,3 +55,4 @@ class NutritionalTargetsValuesTest(unittest.TestCase):
         self.create_targets_page.clear_all_inputs()
 
         self.browser_wrapper.close_browser()
+
