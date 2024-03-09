@@ -32,7 +32,6 @@ class PerformanceTest(unittest.TestCase):
         except AssertionError as e:
             self.logger.error(f"Assertion error in {self.test_name}: {e}")
 
-
     def test_get_by_race_performance(self, race='demon'):
         start_time = time.time()  # Record start time
         self.cards.get_cards_by_race(race=race)
@@ -43,7 +42,6 @@ class PerformanceTest(unittest.TestCase):
             self.logger.info(f"{self.test_name} completed successfully in {elapsed_time} seconds.")
         except AssertionError as e:
             self.logger.error(f"Assertion error in {self.test_name}: {e}")
-
 
     def test_get_by_type_performance(self, type='spell'):
         start_time = time.time()  # Record start time

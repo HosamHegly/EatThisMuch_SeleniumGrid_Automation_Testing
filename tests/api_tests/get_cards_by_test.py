@@ -36,8 +36,7 @@ class CardFilterTest(unittest.TestCase):
 
         for card in response_body:
             try:
-                # Adjust according to your API. Some APIs use 'class', others 'playerClass', etc.
-                card_class = card.get('class') or card.get('playerClass')
+                card_class = card.get('playerClass')
                 self.assertEqual(class_name, card_class)
                 self.logger.info(
                     f"{self.test_name}: Received card class matches the requested class name parameter {class_name}.")
@@ -71,7 +70,6 @@ class CardFilterTest(unittest.TestCase):
     def test_by_class_endpoint_response_body_with_invalid_params(self):
             card_response = self.card_info.get_cards_by_class(class_name='hunter', body={'attack': 'invalid', 'health': 'invalid'})
             status_code = card_response.status_code
-            response_body = card_response.json()
             try:
                 self.assertEqual(404, status_code)
                 self.logger.info(
@@ -127,7 +125,6 @@ class CardFilterTest(unittest.TestCase):
     def test_by_race_endpoint_response_body_with_invalid_params(self):
         card_response = self.card_info.get_cards_by_race(race='demon', body={'attack':'invalid','health':'invalid'})
         status_code = card_response.status_code
-        response_body = card_response.json()
         try:
             self.assertEqual(404,status_code)
             self.logger.info(
