@@ -67,8 +67,8 @@ class CardFilterTest(unittest.TestCase):
                 self.logger.info(
                     f"{self.test_name}: {expected_param_key} correctly matched {expected_param_value} in card.")
 
-    def test_by_class_endpoint_response_body_with_invalid_params(self):
-            card_response = self.card_info.get_cards_by_class(class_name='hunter', body={'attack': 'invalid', 'health': 'invalid'})
+    def test_by_class_endpoint_response_body_with_invalid_params(self,class_name='mage'):
+            card_response = self.card_info.get_cards_by_class(class_name=class_name, body={'attack': 'invalid', 'health': 'invalid'})
             status_code = card_response.status_code
             try:
                 self.assertEqual(404, status_code)
@@ -122,8 +122,8 @@ class CardFilterTest(unittest.TestCase):
                 self.logger.info(
                     f"{self.test_name}: {expected_param_key} correctly matched {expected_param_value} in card.")
 
-    def test_by_race_endpoint_response_body_with_invalid_params(self):
-        card_response = self.card_info.get_cards_by_race(race='demon', body={'attack':'invalid','health':'invalid'})
+    def test_by_race_endpoint_response_body_with_invalid_params(self,race='demon'):
+        card_response = self.card_info.get_cards_by_race(race=race, body={'attack':'invalid','health':'invalid'})
         status_code = card_response.status_code
         try:
             self.assertEqual(404,status_code)
