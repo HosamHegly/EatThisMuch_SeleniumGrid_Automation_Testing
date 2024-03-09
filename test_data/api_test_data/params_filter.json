@@ -1,0 +1,19 @@
+{"by_class":[
+  ["Hunter", {"health": 5}],
+  ["Mage" ,{"attack": 2}],
+  ["Warrior", {"cost": 3}],
+  ["warlock",{"health": 5,"attack": 2,"cost": 2}]
+],
+ "by_race": [
+         ["Beast", {"health": 5}],
+  ["Demon", {"attack": 2}],
+  ["Dragon", {"cost": 3,"attack": 3}],
+  ["Pirate",{"health": 2,"attack": 2,"cost": 2}]
+ ],
+  "by_type": [
+    ["Spell", {"attack": 5}],
+  ["Minion", {"health": 4}],
+  ["Weapon", {"cost": 3,"attack": 3,"durability": 3}],
+  ["Minion",{"health": 5,"attack": 2,"cost": 2}]
+ ]
+}

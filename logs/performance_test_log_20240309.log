@@ -1,0 +1,20 @@
+2024-03-09 21:24:40,290 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-09 21:24:40,290 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-09 21:24:40,291 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-09 21:24:42,600 - INFO - Received response: 200
+2024-03-09 21:24:42,600 - INFO - test_get_by_race_performance completed successfully in 2.3100295066833496 seconds.
+2024-03-09 21:24:42,911 - INFO - Received response: 200
+2024-03-09 21:24:42,911 - INFO - test_get_by_class_performance completed successfully in 2.620227813720703 seconds.
+2024-03-09 21:24:45,813 - INFO - Received response: 200
+2024-03-09 21:24:45,813 - ERROR - Assertion error in test_get_by_type_performance: False is not true : The response time exceeded the threshold.
+2024-03-09 21:39:23,134 - INFO - Received response: 200
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: patch matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: classes matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: sets matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: standard matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: wild matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: types matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: factions matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: qualities matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: races matched expected info.
+2024-03-09 21:39:23,135 - INFO - test_info_endpoint_response_body: locales matched expected info.

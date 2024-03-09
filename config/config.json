@@ -1,0 +1,20 @@
+{
+
+  "hub": "http://172.16.22.37:4444/wd/hub",
+  "url": "https://www.eatthismuch.com/app/planner/today",
+  "grid": false,
+  "parallel": true,
+  "serial": false,
+  "browser": "chrome",
+  "platform": "windows",
+  "browser_types": [
+    "chrome",
+    "firefox"
+  ],
+  "api_url": "https://omgvamp-hearthstone-v1.p.rapidapi.com",
+  "api_headers":{
+    "X-RapidAPI-Key": "c67ad700cemsh5217e54bf1713cfp1ecedfjsndb9e5d800c06",
+    "X-RapidAPI-Host": "omgvamp-hearthstone-v1.p.rapidapi.com"
+  }
+
+}

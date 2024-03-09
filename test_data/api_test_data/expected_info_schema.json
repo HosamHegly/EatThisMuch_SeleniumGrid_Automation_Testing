@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "patch": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "classes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sets": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "standard": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "wild": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "types": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "factions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "qualities": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "races": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "locales": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "required": [
+    "patch",
+    "classes",
+    "sets",
+    "standard",
+    "wild",
+    "types",
+    "factions",
+    "qualities",
+    "races",
+    "locales"
+  ]
+}
