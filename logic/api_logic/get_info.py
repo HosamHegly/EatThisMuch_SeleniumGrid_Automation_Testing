@@ -11,8 +11,7 @@ class CardsInfo:
 
     def get_info(self):
         self.cards_info = self.my_api.api_get_request(f'{self.url}/info')
-        return self.cards_info.json()
+        return self.cards_info
 
-    def get_status_code(self):
-        return self.cards_info.status_code
+
 
