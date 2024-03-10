@@ -4,14 +4,13 @@ import inquirer
 from utils.json_reader import get_config_data
 import concurrent.futures
 
+
 def find_test_files():
     tests = []
     for file in os.listdir('.\\tests\\api_tests'):
         if file.endswith('_test.py'):
             tests.append(file[:-3])  # Remove '.py' extension for import
     return tests
-
-
 
 
 def run_tests_in_serial(selected_tests):
@@ -40,6 +39,7 @@ def run_tests_in_parallel(selected_tests):
             except Exception as exc:
                 print('%r generated an exception: %s' % (test_case, exc))
 
+
 def run_individual_test(test_case):
     try:
         suite = unittest.TestSuite([test_case])
@@ -47,6 +47,7 @@ def run_individual_test(test_case):
         runner.run(suite)
     except Exception as e:
         print(f"Error running test case {test_case}: {e}")
+
 
 def get_individual_test_cases(selected_tests):
     test_cases = []
@@ -85,6 +86,5 @@ if __name__ == "__main__":
     tests = select_tests_to_run()
     if is_parallel:
         run_tests_in_parallel(tests)
-
-    elif is_serial:
+    else:
         run_tests_in_serial(tests)

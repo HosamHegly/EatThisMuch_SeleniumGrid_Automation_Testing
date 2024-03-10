@@ -15,8 +15,6 @@ class CardInfoTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        setup_logging()
-        cls.logger = logging.getLogger("cardInfoTest")
         cls.my_api = APIWrapper()
         cls.card_info = CardsInfo(cls.my_api)
         cls.card_info_response = cls.card_info.get_info()
@@ -27,21 +25,13 @@ class CardInfoTest(unittest.TestCase):
 
     def test_info_endpoint_status_code(self):
         status_code = self.card_info_response.status_code
-
-        try:
-            self.assertEqual(status_code, 200, "didn't receive ok 200 on get request")
-            self.logger.info(f"{self.test_name}: Successfully received status code 200 for info endpoint.")
-        except AssertionError as e:
-            self.logger.error(f"{self.test_name}: Expected status code 200, but received {status_code}. Error: {e}")
-            raise
+        self.assertEqual(status_code, 200, "didn't receive ok 200 on get request")
 
     def test_info_endpoint_schema(self):
         schema = get_json(self.test_data_schema_path)
         try:
             validate(instance=self.card_info_response_json, schema=schema)
-            self.logger.info(f"{self.test_name} JSON data successfully validated against the schema.")
         except ValidationError as e:
-            self.logger.error(f"{self.test_name} :JSON data did not validate against the schema: {e}")
             self.fail(f"JSON data did not validate against the schema: {e}")
 
     def test_info_endpoint_response_body(self):
@@ -49,10 +39,6 @@ class CardInfoTest(unittest.TestCase):
         test_name = self.id().split('.')[-1]
 
         for category in expected_info:
-            try:
-                self.assertEqual(self.card_info_response_json[category], expected_info[category],
+            self.assertEqual(self.card_info_response_json[category], expected_info[category],
                                  f"{category} didn't match expected info")
-                self.logger.info(f"{test_name}: {category} matched expected info.")
-            except AssertionError as e:
-                self.logger.error(f"{test_name}: {category} didn't match expected info. Error: {e}")
-                raise
+
