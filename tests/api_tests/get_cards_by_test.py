@@ -62,6 +62,6 @@ class CardFilterTest(unittest.TestCase):
                 self.assertEqual(actual_value, expected_param_value,
                                  f"Expected {expected_param_key} to be {expected_param_value}, got {actual_value} in one of the cards.")
 
-    def test_by_race_endpoint_response_body_with_invalid_params(self, race='demon'):
+    def test_by_race_endpoint_response_body_with_invalid_params(self, race='invalid'):
         card_response = self.card_info.get_cards_by_race(race=race, body={'attack': 'invalid', 'health': 'invalid'})
         self.assertEqual(404, card_response, 'API did not return HTTP 404 Bad Request for invalid parameters. Error')
