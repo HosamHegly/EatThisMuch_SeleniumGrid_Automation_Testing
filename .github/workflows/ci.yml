@@ -26,11 +26,11 @@ jobs:
 
     - name: Run ui tests
       run: |
-        python ./test_runner.py
+        python test_runner.py
 
     - name: Run api tests
       run: |
-        python ./api__test_runner.py
+        python api__test_runner.py
 
 
 
