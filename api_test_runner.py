@@ -62,8 +62,8 @@ def get_individual_test_cases(selected_tests):
     return test_cases
 
 
-def select_tests_to_run():
-    test_files = find_test_files()
+'''def select_tests_to_run(tests):
+    test_files = tests
     questions = [
         inquirer.Checkbox('tests',
                           message="Which tests do you want to run? (Space to select, Enter to confirm)",
@@ -76,15 +76,15 @@ def select_tests_to_run():
     else:
         selected_tests = answers['tests']
 
-    return selected_tests
+    return selected_tests'''
 
 
 if __name__ == "__main__":
     config = get_config_data()
     is_parallel = config["parallel"]
     is_serial = config["serial"]
-    tests = select_tests_to_run()
+    test_files = find_test_files()
     if is_parallel:
-        run_tests_in_parallel(tests)
+        run_tests_in_parallel(test_files)
     else:
-        run_tests_in_serial(tests)
+        run_tests_in_serial(test_files)
