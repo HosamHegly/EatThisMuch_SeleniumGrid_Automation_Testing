@@ -21,11 +21,10 @@ jobs:
     - name: Setup ChromeDriver
       uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: latest
+       chrome-version: latest
 
 
     - name: Run ui tests
       run: |
-        python ./test/ui_tests/test_runner.py
-
+        python /test/ui_tests/test_runner.py
 
