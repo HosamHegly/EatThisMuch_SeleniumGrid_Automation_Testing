@@ -1,5 +1,5 @@
 import unittest
-from utils.helper_functions import calculate_macro_calories
+from Utils.helper_functions import calculate_macro_calories
 from infra.ui_infra.browser_wrapper import BrowserWrapper
 from logic.ui_logic.create_nutritional_target_page import CreateNutritionalTargetPage
 from logic.ui_logic.nutritional_target_page import NutritionalTargetPage

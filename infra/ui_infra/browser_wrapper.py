@@ -1,7 +1,7 @@
 import json
 import time
 from os.path import dirname, join
-from utils import cookies
+from Utils import cookies
 from selenium import webdriver
 
 

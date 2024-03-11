@@ -5,7 +5,7 @@ import unittest
 from infra.api_infra.api_wrapper import APIWrapper
 from logic.api_logic.get_info import CardsInfo
 from logic.api_logic.get_cards_by import CardsEndpoints
-from utils.logging_setup import setup_logging
+from Utils.logging_setup import setup_logging
 
 
 class PerformanceTest(unittest.TestCase):

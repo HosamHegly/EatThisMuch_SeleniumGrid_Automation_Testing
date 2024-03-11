@@ -1,7 +1,7 @@
 import os
 import unittest
 import inquirer
-from utils.json_reader import get_config_data
+from Utils.json_reader import get_config_data
 import concurrent.futures
 
 

@@ -1,6 +1,6 @@
 import unittest
 
-from utils.helper_functions import is_contained_in
+from Utils.helper_functions import is_contained_in
 from infra.ui_infra.browser_wrapper import BrowserWrapper
 from logic.ui_logic.food_search_popup import FoodSearchPopup
 from logic.ui_logic.planner_page import PlannerPage

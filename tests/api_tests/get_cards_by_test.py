@@ -4,8 +4,8 @@ from parameterized import parameterized
 from infra.api_infra.api_wrapper import APIWrapper
 from logic.api_logic.get_cards_by import CardsEndpoints
 from logic.api_logic.get_info import CardsInfo
-from utils.json_reader import get_json
-from utils.logging_setup import setup_logging
+from Utils.json_reader import get_json
+from Utils.logging_setup import setup_logging
 
 params_file_path = "test_data\\api_test_data\\params_filter.json"
 info_file_path = "test_data\\api_test_data\\expected_info.json"

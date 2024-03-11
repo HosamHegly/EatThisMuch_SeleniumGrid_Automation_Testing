@@ -1,7 +1,7 @@
 import requests
 import logging
-from utils.json_reader import get_config_data
-from utils.logging_setup import setup_logging
+from Utils.json_reader import get_config_data
+from Utils.logging_setup import setup_logging
 
 
 class APIWrapper:

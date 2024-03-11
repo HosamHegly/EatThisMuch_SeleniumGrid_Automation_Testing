@@ -1,6 +1,6 @@
 import time
 from telnetlib import EC
-from utils.helper_functions import choose_random_number_in_range
+from Utils.helper_functions import choose_random_number_in_range
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC

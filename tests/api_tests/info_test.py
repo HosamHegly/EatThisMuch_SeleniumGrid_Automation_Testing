@@ -5,8 +5,8 @@ from jsonschema.validators import validate
 
 from infra.api_infra.api_wrapper import APIWrapper
 from logic.api_logic.get_info import CardsInfo
-from utils.json_reader import get_json
-from utils.logging_setup import setup_logging
+from Utils.json_reader import get_json
+from Utils.logging_setup import setup_logging
 
 
 class CardInfoTest(unittest.TestCase):

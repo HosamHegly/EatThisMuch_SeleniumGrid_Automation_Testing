@@ -1,4 +1,4 @@
-from utils.json_reader import get_config_data
+from Utils.json_reader import get_config_data
 
 
 class CardsEndpoints:
