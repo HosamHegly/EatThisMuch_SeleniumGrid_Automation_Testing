@@ -23,7 +23,7 @@ class CardFilterTest(unittest.TestCase):
     def test_by_class_without_params(self, class_name):
         card_response = self.card_info.get_cards_by_class(class_name)
         response_body = card_response.json()
-        self.assertEqual(200,response_body.status_code,f'expected status code 200 but got{response_body.status_code} instead')
+        self.assertEqual(200,card_response.status_code,f'expected status code 200 but got{card_response.status_code} instead')
         for card in response_body:
             card_class = card.get('playerClass')
             self.assertEqual(class_name, card_class,
@@ -33,7 +33,7 @@ class CardFilterTest(unittest.TestCase):
     def test_by_class_endpoint_response_body_with_valid_params(self, class_name, body):
         card_class_response = self.card_info.get_cards_by_class(class_name=class_name, body=body)
         response_body = card_class_response.json()
-        self.assertEqual(200,response_body.status_code,f'expected status code 200 but got{response_body.status_code} instead')
+        self.assertEqual(200,card_class_response.status_code,f'expected status code 200 but got{card_class_response.status_code} instead')
         for expected_param_key, expected_param_value in body.items():
             for card in response_body:
                 actual_value = card.get(expected_param_key)
@@ -48,7 +48,7 @@ class CardFilterTest(unittest.TestCase):
     def test_by_race_without_params(self, race):
         card_response_race = self.card_info.get_cards_by_race(race)
         response_body = card_response_race.json()
-        self.assertEqual(200,response_body.status_code,f'expected status code 200 but got{response_body.status_code} instead')
+        self.assertEqual(200,card_response_race.status_code,f'expected status code 200 but got{card_response_race.status_code.status_code} instead')
         for card in response_body:
             card_class = card.get('race')
             self.assertEqual(race, card_class,
@@ -59,7 +59,7 @@ class CardFilterTest(unittest.TestCase):
         card_response = self.card_info.get_cards_by_race(race=race, body=body)
         status_code = card_response.status_code
         response_body = card_response.json()
-        self.assertEqual(200,response_body.status_code,f'expected status code 200 but got{response_body.status_code} instead')
+        self.assertEqual(200,card_response.status_code,f'expected status code 200 but got{card_response.status_code} instead')
         for expected_param_key, expected_param_value in body.items():
             for card in response_body:
                 actual_value = card.get(expected_param_key)
