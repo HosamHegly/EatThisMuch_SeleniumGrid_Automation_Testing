@@ -18,6 +18,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run tests
+    - name: Setup ChromeDriver
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: latest
+
+
+    - name: Run ui tests
       run: |
-        python -m unittest tests/ui_tests/login_page_test.py 
+        python ./test/ui_tests/test_runner.py
+
+

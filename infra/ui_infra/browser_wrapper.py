@@ -23,8 +23,12 @@ class BrowserWrapper:
             self.driver.fullscreen_window()
 
         else:
+            options = webdriver.ChromeOptions()
+            options.add_argument("--headless")
+            options.add_argument("--no-sandbox")  # This line is often necessary in CI environments
+            options.add_argument("--disable-dev-shm-usage")  # This can help in environments with
             if browser.lower() == 'chrome':
-                self.driver = webdriver.Chrome()
+                self.driver = webdriver.Chrome(options=options)
             elif browser.lower() == 'firefox':
                 self.driver = webdriver.Firefox()
             elif browser.lower() == 'edge':

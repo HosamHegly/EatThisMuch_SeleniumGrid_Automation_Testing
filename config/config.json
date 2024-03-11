@@ -3,13 +3,13 @@
   "hub": "http://172.16.22.37:4444/wd/hub",
   "url": "https://www.eatthismuch.com/app/planner/today",
   "grid": false,
-  "parallel": true,
+  "parallel": false,
   "serial": false,
   "browser": "chrome",
   "platform": "windows",
   "browser_types": [
-    "chrome",
-    "firefox"
+    "chrome"
+
   ],
   "api_url": "https://omgvamp-hearthstone-v1.p.rapidapi.com",
   "api_headers":{
