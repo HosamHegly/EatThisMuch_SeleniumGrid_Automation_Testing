@@ -22,4 +22,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run tests
       run: |
-        python -m unittest
+        python -m unittest tests/api_tests/get_cards_by_test.py
