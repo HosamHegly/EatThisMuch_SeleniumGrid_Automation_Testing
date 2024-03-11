@@ -26,5 +26,5 @@ jobs:
 
     - name: Run ui tests
       run: |
-        python /tests/ui_tests/test_runner.py
+        python tests/ui_tests/test_runner.py
 
