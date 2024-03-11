@@ -7,7 +7,7 @@ import concurrent.futures
 
 def find_test_files():
     tests = []
-    for file in os.listdir('.\\tests\\api_tests'):
+    for file in os.listdir(os.path.join('.','tests','api_tests')):
         if file.endswith('_test.py'):
             tests.append(file[:-3])  # Remove '.py' extension for import
     return tests
