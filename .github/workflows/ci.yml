@@ -5,13 +5,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: eatThisMuchTesting
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
@@ -25,3 +21,4 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest tests/api_tests/get_cards_by_test.py
+
