@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: eatThisMuchTesting
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
@@ -19,8 +22,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Add project root to PYTHONPATH
-      run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
     - name: Run tests
       run: |
         python -m unittest tests/api_tests/get_cards_by_test.py
