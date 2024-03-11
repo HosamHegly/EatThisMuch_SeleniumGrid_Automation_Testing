@@ -21,7 +21,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Set PYTHONPATH
-      run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
+      run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
     - name: Run tests
       run: |
         python -m unittest tests/api_tests/get_cards_by_test.py
