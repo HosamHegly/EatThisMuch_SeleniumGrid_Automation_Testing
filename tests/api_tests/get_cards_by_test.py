@@ -1,3 +1,4 @@
+import os
 import unittest
 import logging
 from parameterized import parameterized
@@ -7,8 +8,8 @@ from logic.api_logic.get_info import CardsInfo
 from Utils.json_reader import get_json
 from Utils.logging_setup import setup_logging
 
-params_file_path = "test_data\\api_test_data\\params_filter.json"
-info_file_path = "test_data\\api_test_data\\expected_info.json"
+params_file_path = os.path.join('test_data', 'api_test_data','params_filter.json')
+info_file_path = os.path.join('test_data', 'api_test_data', 'expected_info.json')
 
 
 class CardFilterTest(unittest.TestCase):

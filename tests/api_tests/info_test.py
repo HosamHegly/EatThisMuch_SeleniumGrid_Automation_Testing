@@ -1,3 +1,4 @@
+import os
 import unittest
 import logging
 from jsonschema.exceptions import ValidationError
@@ -10,8 +11,8 @@ from Utils.logging_setup import setup_logging
 
 
 class CardInfoTest(unittest.TestCase):
-    test_data_path = 'test_data\\api_test_data\\expected_info.json'
-    test_data_schema_path = 'test_data\\api_test_data\\expected_info_schema.json'
+    params_file_path = os.path.join('test_data', 'api_test_data', 'params_filter.json')
+    info_file_path = os.path.join('test_data', 'api_test_data', 'expected_info.json')
 
     @classmethod
     def setUpClass(cls) -> None:
