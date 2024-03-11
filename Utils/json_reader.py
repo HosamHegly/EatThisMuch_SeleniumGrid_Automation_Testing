@@ -1,4 +1,5 @@
 import json
+import os
 from os.path import dirname, join, abspath
 
 from jsonschema.validators import validate
@@ -16,7 +17,7 @@ def get_filename(filename):
 
 
 def get_config_data():
-    filename = get_filename("config\\config.json")
+    filename = get_filename(os.path.join('config','config.json'))
     with open(filename, 'r') as file:
         config = json.load(file)
         validate_config(config)
@@ -31,7 +32,7 @@ def get_json(file):
 
 
 def validate_config(config_data):
-    filename = get_filename("config\\config_schema.json")
+    filename = get_filename(os.path.join('config','config_schema.json'))
     with open(filename, 'r') as file:
         schema_data = json.load(file)
     try:
