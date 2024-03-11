@@ -30,7 +30,7 @@ jobs:
 
     - name: Run api tests
       run: |
-        python api__test_runner.py
+        python api_test_runner.py
 
 
 
