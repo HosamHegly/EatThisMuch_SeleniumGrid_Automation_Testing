@@ -26,13 +26,11 @@ jobs:
 
     - name: Run ui tests
       run: |
-        python tests/ui_tests/add_food_to_meal_test_runner.py
+        python ./test_runner.py
 
     - name: Run api tests
       run: |
-        python tests/ui_tests/add_food_to_meal_test_runner.py
-        env:
-         PYTHONPATH: ${{ github.workspace }}
+        python ./api__test_runner.py
 
 
 
