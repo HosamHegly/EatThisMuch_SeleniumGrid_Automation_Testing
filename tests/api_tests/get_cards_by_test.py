@@ -41,7 +41,7 @@ class CardFilterTest(unittest.TestCase):
 
     def test_by_class_endpoint_response_body_with_invalid_params(self, class_param='invalid'):
         card_response = self.card_info.get_cards_by_class(class_name=class_param, body={'attack':'invalid','health':'invalid'})
-        self.assertEqual(404, card_response, 'API did not return HTTP 404 Bad Request for invalid parameters. Error')
+        self.assertEqual(404, card_response.status_code, 'API did not return HTTP 404 Bad Request for invalid parameters. Error')
 
     @parameterized.expand(get_json(info_file_path)['races'])
     def test_by_race_without_params(self, race):
@@ -65,4 +65,5 @@ class CardFilterTest(unittest.TestCase):
 
     def test_by_race_endpoint_response_body_with_invalid_params(self, race='invalid'):
         card_response = self.card_info.get_cards_by_race(race=race, body={'attack': 'invalid', 'health': 'invalid'})
-        self.assertEqual(404, card_response, 'API did not return HTTP 404 Bad Request for invalid parameters. Error')
+
+        self.assertEqual(404, card_response.status_code, 'API did not return HTTP 404 Bad Request for invalid parameters. Error')
