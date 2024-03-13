@@ -49,6 +49,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                 checkout scm
+
                 sh 'pip install -r requirements.txt' // Install dependencies if needed
 
             }
