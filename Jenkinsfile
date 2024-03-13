@@ -5,7 +5,6 @@ pipeline {
             steps {
 
                 bat 'pip install -r requirements.txt' // Install dependencies if needed
-                checkout scm
                 echo 'Building..'
             }
         }
