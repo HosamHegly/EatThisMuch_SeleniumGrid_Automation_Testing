@@ -1,55 +1,29 @@
 pipeline {
     agent any
 
-
-
     stages {
-        stage('Setup Environment') {
-            steps {
-                echo '$path'
-                echo 'Setting up Python environment...'
-                bat 'C:\\Python\\Python312\\python.exe -m venv venv'
-                bat 'venv\\Scripts\\python.exe -m pip install --upgrade pip'
-                bat 'venv\\Scripts\\pip.exe install -r requirements.txt'
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Building..'
-                // Your build steps here
+//                 sh 'python -m pip install --upgrade pip'
+                bat 'pip install -r requirements.txt'
+
             }
         }
-
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat "venv\\Scripts\\python.exe api_test_runner.py"
+                // Add test execution steps here
+                bat 'python api_test_runner.py'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-                // Your deployment steps here
+//                 git 'commit -am "Deploying latest changes"'
+//                 git 'push origin main'
+
             }
-        }
-    }
-
-    post {
-        always {
-            echo 'Cleaning up...'
-            bat "rd /s /q venv"
-        }
-
-        success {
-            echo 'Build succeeded.'
-            // Additional steps for successful build
-        }
-
-        failure {
-            echo 'Build failed.'
-            // Additional steps for failed build
         }
     }
 }
