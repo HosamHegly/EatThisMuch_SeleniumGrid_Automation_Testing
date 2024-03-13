@@ -1,44 +1,29 @@
 pipeline {
     agent any
 
-    environment {
-        PIP_PATH = 'C:\\Users\\Hosam Hegly\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe'
-        PYTHON_PATH = 'C:\\Users\\Hosam Hegly\\AppData\\Local\\Programs\\Python\\Python312\\python.exe'
-    }
-
     stages {
-        stage('Setup Environment') {
-            steps {
-                echo '$path'
-                echo 'Setting up Python environment...'
-                bat 'C:\\Users\\Hosam Hegly\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m venv venv'
-                bat 'venv\\Scripts\\python.exe -m pip install --upgrade pip'
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Building..'
-                bat 'venv\\Scripts\\pip.exe install -r requirements.txt'
-
+//                 sh 'python -m pip install --upgrade pip'
+                bat 'pip install -r requirements.txt'
 
             }
         }
-
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat "venv\\Scripts\\python.exe  api_test_runner.py"
+                // Add test execution steps here
+                bat 'python C:\\Users\\Hosam Hegly\\PycharmProjects\\eathThisMuchTesting\\api_test_runner.py'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-                // Your deployment steps here
+//                 git 'commit -am "Deploying latest changes"'
+//                 git 'push origin main'
+
             }
         }
     }
-
-
 }
