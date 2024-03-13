@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define the Docker image name
-        IMAGE_NAME = 'my_tests'
+        IMAGE_NAME = 'tests'
         TAG = 'latest' // You can also use a build ID or any other tag
     }
 
@@ -36,5 +36,5 @@ pipeline {
         }
     }
 
-
+  
 }
