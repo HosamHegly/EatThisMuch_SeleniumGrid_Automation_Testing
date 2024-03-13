@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 // Run your tests here
-                bat 'python  api_test_runner.py' // Replace with your test command
+                bat 'py  api_test_runner.py' // Replace with your test command
             }
         }
         stage('Deploy') {
