@@ -1,52 +1,46 @@
 pipeline {
     agent any
 
-
+    environment {
+        // Define the Docker image name
+        IMAGE_NAME = 'my_tests_jenkins'
+        TAG = 'latest' // You can also use a build ID or any other tag
+    }
 
     stages {
-        stage('Set Python Env') {
+        stage('Build Docker Image') {
             steps {
-                bat '''
-                    py -m venv venv
-                 '''
-                    }
-                    }
-
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                pip install -r requirements.txt            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                bat "python api_test_runner.py"
+                script {
+                    // Build the Docker image
+                    docker.build("${IMAGE_NAME}:${TAG}", '.')
+                }
             }
         }
 
-        stage('Deploy') {
+        stage('Run API Test') {
             steps {
-                echo 'Deploying..'
-                // Your deployment steps here
+                script {
+                    // Run the Docker container to execute api_test_runner.py
+                    docker.run("${IMAGE_NAME}:${TAG}", "python api_test_runner.py")
+                }
+            }
+        }
+
+        stage('Run Add Food to Meal Test') {
+            steps {
+                script {
+                    // Run the Docker container to execute add_food_to_meal_test_runner.py
+                    docker.run("${IMAGE_NAME}:${TAG}", "python add_food_to_meal_test_runner.py")
+                }
             }
         }
     }
 
     post {
         always {
+            // This could be used to clean up Docker images, for example
             echo 'Cleaning up...'
-            bat "rd /s /q venv"
-        }
-
-        success {
-            echo 'Build succeeded.'
-            // Additional steps for successful build
-        }
-
-        failure {
-            echo 'Build failed.'
-            // Additional steps for failed build
+            sh "docker rmi ${IMAGE_NAME}:${TAG}"
         }
     }
 }
