@@ -11,6 +11,7 @@ from Utils.logging_setup import setup_logging
 
 
 class CardInfoTest(unittest.TestCase):
+    test_data_path = os.path.join('test_data', 'api_test_data', 'expected_info.json')
 
     @classmethod
     def setUpClass(cls) -> None:

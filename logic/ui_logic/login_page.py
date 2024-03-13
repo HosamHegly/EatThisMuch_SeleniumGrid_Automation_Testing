@@ -8,7 +8,7 @@ from infra.ui_infra.base_page import BasePage
 
 
 class LoginPage(BasePage):
-    EMAIL_FIELD = (By.ID, "username")
+    EMAIL_FIELD = (By.XPATH, "//input[@class=username]")
     PASSWORD_FIELD = (By.XPATH, "//input[@autocomplete='password']")
     LOGIN_BUTTON = (By.XPATH, "//button[@type='submit']")
     ERROR_MESSAGE = "//div[@class='warning svelte-1vdzk1k']"
