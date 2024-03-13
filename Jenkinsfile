@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                  bat '''
-                    python -m venv venv
+                    py -m venv venv
                     venv\\Scripts\\activate.bat
                 '''
 //                 sh 'python -m pip install --upgrade pip'
