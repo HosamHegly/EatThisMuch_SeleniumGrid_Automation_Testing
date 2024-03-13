@@ -2,13 +2,7 @@ pipeline {
     agent any
 
     stages {
-        steps {
-                bat '''
-                    python -m venv venv
-                    venv\\Scripts\\activate.bat
-                '''
-            }
-            }
+
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -16,6 +10,13 @@ pipeline {
                 bat 'pip install -r requirements.txt'
 
             }
+            steps {
+                bat '''
+                    python -m venv venv
+                    venv\\Scripts\\activate.bat
+                '''
+                }
+
         }
         stage('Test') {
             steps {
