@@ -40,7 +40,7 @@ pipeline {
         always {
             // This could be used to clean up Docker images, for example
             echo 'Cleaning up...'
-            sh "docker rmi ${IMAGE_NAME}:${TAG}"
+            bat "docker rmi ${IMAGE_NAME}:${TAG}"
         }
     }
 }
