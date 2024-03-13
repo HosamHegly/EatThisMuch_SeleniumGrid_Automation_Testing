@@ -40,20 +40,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            echo 'Cleaning up...'
-            bat "rd /s /q venv"
-        }
 
-        success {
-            echo 'Build succeeded.'
-            // Additional steps for successful build
-        }
-
-        failure {
-            echo 'Build failed.'
-            // Additional steps for failed build
-        }
-    }
 }
