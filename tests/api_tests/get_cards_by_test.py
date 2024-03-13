@@ -48,7 +48,7 @@ class CardFilterTest(unittest.TestCase):
     def test_by_race_without_params(self, race):
         card_response_race = self.card_info.get_cards_by_race(race)
         response_body = card_response_race.json()
-        self.assertEqual(200,card_response_race.status_code,f'expected status code 200 but got{card_response_race.status_code.status_code} instead')
+        self.assertEqual(200,card_response_race.status_code,f'expected status code 200 but got{card_response_race.status_code} instead')
         for card in response_body:
             card_class = card.get('race')
             self.assertEqual(race, card_class,

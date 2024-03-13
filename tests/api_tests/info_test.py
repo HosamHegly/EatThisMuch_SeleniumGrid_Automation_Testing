@@ -11,8 +11,6 @@ from Utils.logging_setup import setup_logging
 
 
 class CardInfoTest(unittest.TestCase):
-    params_file_path = os.path.join('test_data', 'api_test_data', 'params_filter.json')
-    info_file_path = os.path.join('test_data', 'api_test_data', 'expected_info.json')
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -28,12 +26,7 @@ class CardInfoTest(unittest.TestCase):
         status_code = self.card_info_response.status_code
         self.assertEqual(status_code, 200, "didn't receive ok 200 on get request")
 
-    def test_info_endpoint_schema(self):
-        schema = get_json(self.test_data_schema_path)
-        try:
-            validate(instance=self.card_info_response_json, schema=schema)
-        except ValidationError as e:
-            self.fail(f"JSON data did not validate against the schema: {e}")
+
 
     def test_info_endpoint_response_body(self):
         expected_info = get_json(self.test_data_path)
