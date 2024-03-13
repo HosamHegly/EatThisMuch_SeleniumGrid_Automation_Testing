@@ -2,11 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage('Diagnostic') {
+            steps {
+                bat 'echo %PATH%'
+                bat 'dir C:\\Users\\Hosam Hegly\\AppData\\Local\\Programs\\Python\\Python312\\Scripts'
         stage('Build') {
             steps {
                 echo 'Building..'
 //                 sh 'python -m pip install --upgrade pip'
-                bat 'C:\\Users\\Hosam Hegly\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
 
             }
         }
