@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define the Docker image name
-        IMAGE_NAME = 'my_tests_jenkins'
+        IMAGE_NAME = 'my_tests'
         TAG = 'latest' // You can also use a build ID or any other tag
     }
 
