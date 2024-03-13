@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'pip install -r requirements.txt' // Install dependencies if needed
+
+                pat 'pip install -r requirements.txt' // Install dependencies if needed
                 checkout scm
                 echo 'Building..'
             }
