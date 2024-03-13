@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
 //                 sh 'python -m pip install --upgrade pip'
-                bat 'pip install -r requirements.txt'
+                bat 'C:\\Users\\Hosam Hegly\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip install -r requirements.txt'
 
             }
         }
