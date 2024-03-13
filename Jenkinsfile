@@ -1,22 +1,27 @@
 pipeline {
     agent any
+
     stages {
         stage('Build') {
             steps {
+                echo 'Building..'
+//                 sh 'python -m pip install --upgrade pip'
+                bat 'pip install -r requirements.txt'
 
-                bat 'pip install -r requirements.txt' // Install dependencies if needed
             }
         }
-         stage('Test') {
+        stage('Test') {
             steps {
                 echo 'Testing..'
-                // Run your tests here
-                bat 'py C:\Users\Hosam Hegly\PycharmProjects\eathThisMuchTesting\api_test_runner.py' // Replace with your test command
+                // Add test execution steps here
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
+//                 git 'commit -am "Deploying latest changes"'
+//                 git 'push origin main'
+
             }
         }
     }
