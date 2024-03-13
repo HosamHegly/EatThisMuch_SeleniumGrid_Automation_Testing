@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 // Run your tests here
-                pat 'python -m unittest test_pet.py' // Replace with your test command
+                pat 'python  api_test_runner.py' // Replace with your test command
             }
         }
         stage('Deploy') {
