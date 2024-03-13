@@ -43,3 +43,29 @@ pipeline {
         }
     }
 }
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                sh 'pip install -r requirements.txt' // Install dependencies if needed
+
+            }
+        }
+         stage('Test') {
+            steps {
+                echo 'Testing..'
+                // Run your tests here
+                sh 'python api_test_runner.py' // Replace with your test command
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+            }
+        }
+    }
+}
+
+
