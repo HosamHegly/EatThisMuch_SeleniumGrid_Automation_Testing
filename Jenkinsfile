@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
 
-                bat 'pip install -r requirements.txt' // Install dependencies if needed
+                bat 'C:\Users\Hosam Hegly\PycharmProjects\eathThisMuchTesting\requirements.txt' // Install dependencies if needed
             }
         }
          stage('Test') {
