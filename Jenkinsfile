@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
 
-                pat 'pip install -r requirements.txt' // Install dependencies if needed
+                bat 'pip install -r requirements.txt' // Install dependencies if needed
                 checkout scm
                 echo 'Building..'
             }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 // Run your tests here
-                pat 'python  api_test_runner.py' // Replace with your test command
+                bat 'python  api_test_runner.py' // Replace with your test command
             }
         }
         stage('Deploy') {
