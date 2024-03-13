@@ -6,6 +6,8 @@ pipeline {
             steps {
                 bat 'echo %PATH%'
                 bat 'dir C:\\Users\\Hosam Hegly\\AppData\\Local\\Programs\\Python\\Python312\\Scripts'
+                }
+                }
         stage('Build') {
             steps {
                 echo 'Building..'
