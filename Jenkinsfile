@@ -12,29 +12,35 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    docker.build("${IMAGE_NAME}:${TAG}", '.')
+                    def customImage = docker.build("${IMAGE_NAME}:${TAG}")
                 }
             }
         }
 
         stage('Run API Test') {
             steps {
-                script {
-                    // Run the Docker container to execute api_test_runner.py
-                    docker.run("${IMAGE_NAME}:${TAG}", "python api_test_runner.py")
-                }
+                // Run the Docker container to execute api_test_runner.py
+                bat "docker run --name api_test_runner ${IMAGE_NAME}:${TAG} python api_test_runner.py"
+                // Cleanup
+                bat "docker rm api_test_runner"
             }
         }
 
         stage('Run Add Food to Meal Test') {
             steps {
-                script {
-                    // Run the Docker container to execute add_food_to_meal_test_runner.py
-                    docker.run("${IMAGE_NAME}:${TAG}", "python add_food_to_meal_test_runner.py")
-                }
+                // Run the Docker container to execute add_food_to_meal_test_runner.py
+                bat "docker run --name add_food_to_meal_test_runner ${IMAGE_NAME}:${TAG} python add_food_to_meal_test_runner.py"
+                // Cleanup
+                bat "docker rm add_food_to_meal_test_runner"
             }
         }
     }
 
-  
+    post {
+        always {
+            // This could be used to clean up Docker containers and images
+            echo 'Cleaning up...'
+            bat "docker rmi ${IMAGE_NAME}:${TAG}"
+        }
+    }
 }

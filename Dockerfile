@@ -17,6 +17,5 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-CMD ["python", "add_food_to_meal_test_runner.py", "&&", "api_test_runner.py"]
 
 
