@@ -5,12 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-//                 sh 'python -m pip install --upgrade pip'
-                bat 'pip install -r requirements.txt'
                  bat '''
                     python -m venv venv
                     venv\\Scripts\\activate.bat
                 '''
+//                 sh 'python -m pip install --upgrade pip'
+                bat 'pip install -r requirements.txt'
+
 
             }
 
