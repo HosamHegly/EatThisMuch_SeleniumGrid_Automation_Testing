@@ -6,7 +6,6 @@ pipeline {
     stages {
         stage('Setup Environment') {
             steps {
-                echo '$path'
                 echo 'Setting up Python environment...'
                 bat 'C:\\Python\\Python312\\python.exe -m venv venv'
                 bat 'venv\\Scripts\\python.exe -m pip install --upgrade pip'
@@ -16,7 +15,7 @@ pipeline {
         stage('Setup Selenium Server HUB') {
             steps {
                 echo 'Setting up Selenium server HUB...'
-                bat "java -jar selenium-server-4.17.0.jar hub"
+                bat "start /b java -jar selenium-server-4.17.0.jar hub"
                 // Delay for 10 seconds
                 bat 'ping 127.0.0.1 -n 11 > nul' // Windows command to sleep for 10 seconds
             }
