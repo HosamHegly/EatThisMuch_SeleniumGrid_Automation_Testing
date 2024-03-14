@@ -16,12 +16,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                // Your build steps here
-            }
-        }
 
         stage('running ui test') {
             steps {
