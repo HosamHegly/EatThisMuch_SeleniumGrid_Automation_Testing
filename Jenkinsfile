@@ -21,7 +21,7 @@ pipeline {
         stage('running ui test') {
             steps {
                 echo 'Testing..'
-                bat "${PYTHON_PATH}  check_macro_calories_validity_test_runner.py"
+                bat "${PYTHON_PATH}  api_test_runner.py"
             }
         }
 
