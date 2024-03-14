@@ -15,9 +15,8 @@ def run_tests_for_browser(browser):
 
 
 if __name__ == "__main__":
-    filename = get_config_data()
-    with open(filename, 'r') as file:
-        config = json.load(file)
+    config = get_config_data()
+
     is_parallel = config["parallel"]
     is_serial = config["serial"]
     browsers = config["browser_types"]
