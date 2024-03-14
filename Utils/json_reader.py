@@ -7,11 +7,8 @@ from referencing import jsonschema
 
 
 def get_filename(filename):
-    # here is the directory of json_reader.py
     here = dirname(abspath(__file__))
-    # Go up only one level from `here` to the project root (not two)
     project_root = dirname(here)
-    # Construct the path to the filename in the config directory
     output = join(project_root, filename)
     return output
 
