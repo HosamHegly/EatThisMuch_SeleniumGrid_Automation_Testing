@@ -2,34 +2,38 @@ pipeline {
     agent any
 
     environment {
-        // Define the Docker image name
-        IMAGE_NAME = 'tests'
-        TAG = 'latest'
+        PIP_PATH = 'C:\\Python\\Python312\\Scripts\\pip.exe'
+        PYTHON_PATH = 'C:\\Python\\Python312\\python.exe'
     }
 
     stages {
-        stage('Build Docker Image') {
+        stage('Setup Environment') {
             steps {
-                script {
-                    def customImage = docker.build("${IMAGE_NAME}:${TAG}")
-                }
+                echo 'Setting up Python environment...'
+//                 bat "${PYTHON_PATH} -m venv venv"
+//                 bat "${PYTHON_PATH} -m pip install --upgrade pip"
+                bat "${PIP_PATH} install -r requirements.txt"
             }
         }
 
-        stage('Run Tests in Parallel') {
+        stage('Build') {
             steps {
-                script {
-                    parallel(
-                        'API Test': {
-                            bat "docker run --name api_test_runner ${IMAGE_NAME}:${TAG} python api_test_runner.py"
-                            bat "docker rm api_test_runner"
-                        },
-                        'Add Food to Meal Test': {
-                            bat "docker run --name performance_test ${IMAGE_NAME}:${TAG} python performance_test.py"
-                            bat "docker rm performance_test"
-                        }
-                    )
-                }
+                echo 'Building..'
+                // Your build steps here
+            }
+        }
+
+        stage('running ui test') {
+            steps {
+                echo 'Testing..'
+                bat "${PYTHON_PATH}  check_macro_calories_validity_test_runner.py"
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+                // Your deployment steps here
             }
         }
     }
@@ -37,7 +41,17 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            bat "docker rmi ${IMAGE_NAME}:${TAG}"
+            bat "rd /s /q venv"
+        }
+
+        success {
+            echo 'Build succeeded.'
+            // Additional steps for successful build
+        }
+
+        failure {
+            echo 'Build failed.'
+            // Additional steps for failed build
         }
     }
 }

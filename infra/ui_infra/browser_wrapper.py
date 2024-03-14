@@ -1,8 +1,8 @@
-import json
 import time
 from os.path import dirname, join
 from Utils import cookies
 from selenium import webdriver
+from Utils.json_reader import get_config_data
 
 
 class BrowserWrapper:
@@ -10,11 +10,9 @@ class BrowserWrapper:
 
     def __init__(self):
         self.driver = None
-        filename = self.get_filename("../../config/config.json")
-        with open(filename, 'r') as file:
-            self.config = json.load(file)
+        self.config = get_config_data()
 
-    #return the webdriver based on the config file options
+    # return the webdriver based on the config file options
     def get_driver(self, browser):
         browser_type = self.config["browser"]
         if self.config["grid"]:
@@ -37,23 +35,27 @@ class BrowserWrapper:
 
         self.driver.get(url)
         time.sleep(2)
-        self.driver.fullscreen_window()
 
         return self.driver
 
     def close_browser(self):
         if self.driver:
             self.driver.close()
-    #return browser capabilities based on the browser
+
+    # return browser capabilities based on the browser
     def set_up_capabilities(self, browser_type):
         if browser_type.lower() == 'chrome':
             options = webdriver.ChromeOptions()
+            self.add_options(options)
         elif browser_type.lower() == 'firefox':
             options = webdriver.FirefoxOptions()
+            self.add_options(options)
         elif browser_type.lower() == 'edge':
             options = webdriver.EdgeOptions()
+            self.add_options(options)
         platform_name = self.config["platform"]
         options.add_argument(f'--platformName={platform_name}')
+
         return options
 
     def is_parallel(self):
@@ -76,10 +78,15 @@ class BrowserWrapper:
 
     def get_browser(self):
         return self.config['browser']
-    #add cookies to driver inorder to  skip login
+
+    # add cookies to driver inorder to  skip login
     def add_browser_cookie(self):
         for cookie in self.COOKIE:
             self.driver.add_cookie(cookie)
 
-    def goto(self,url):
+    def goto(self, url):
         self.driver.get(url)
+    def add_options(self,options):
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")

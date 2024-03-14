@@ -3,11 +3,11 @@ import json
 from concurrent.futures import ThreadPoolExecutor
 from os.path import dirname, join
 
-from login_page_test import LoginPageTest
-from planner_page_edit_day_test import MealEditTest
-from search_food_popup_test import FoodSearchPopupTest
-from weight_goal_test import WeightGoalTest
-from nutritional_target_input_values_test import *  # Import the tests case
+from tests.ui_tests.login_page_test import LoginPageTest
+from tests.ui_tests.planner_page_edit_day_test import MealEditTest
+from tests.ui_tests.search_food_popup_test import FoodSearchPopupTest
+from tests.ui_tests.weight_goal_test import WeightGoalTest
+from tests.ui_tests.nutritional_target_input_values_test import *  # Import the tests case
 
 test_cases = [LoginPageTest, MealEditTest, FoodSearchPopupTest, WeightGoalTest,
               NutritionalTargetsValuesTest]
@@ -49,7 +49,7 @@ def dived_tests_parallel_non_parallel(test_cases):
 
 
 if __name__ == "__main__":
-    filename = get_filename("../../config/config.json")
+    filename = get_filename("config/config.json")
     with open(filename, 'r') as file:
         config = json.load(file)
     is_parallel = config["parallel"]
