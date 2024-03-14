@@ -13,15 +13,27 @@ pipeline {
                 bat 'venv\\Scripts\\pip.exe install -r requirements.txt'
             }
         }
-
-        stage('Build') {
+        stage('Setup Selenium Server HUB') {
             steps {
-                echo 'Building..'
-                // Your build steps here
+                echo 'Setting up Selenium server HUB...'
+                bat "start /B java -jar selenium-server.jar hub"
+                // Delay for 10 seconds
+                bat 'ping 127.0.0.1 -n 11 > nul' // Windows command to sleep for 10 seconds
             }
         }
 
-        stage('Test') {
+        stage('Setup Selenium Server nodes') {
+            steps {
+                echo 'Setting up Selenium server nodes...'
+                bat "start /B java -jar selenium-server.jar node --port 5555 --selenium-manager true"
+                // Delay for 10 seconds
+                bat 'ping 127.0.0.1 -n 11 > nul' // Windows command to sleep for 10 seconds
+            }
+        }
+
+
+
+        stage(' Running Tests') {
             steps {
                 echo 'Testing..'
                 bat "venv\\Scripts\\python.exe check_macro_calories_validity_test_runner.py"
