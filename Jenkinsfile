@@ -1,27 +1,30 @@
 pipeline {
     agent any
 
-    environment {
-        PIP_PATH = 'C:\\Python\\Python312\\Scripts\\pip.exe'
-        PYTHON_PATH = 'C:\\Python\\Python312\\python.exe'
-    }
+
 
     stages {
         stage('Setup Environment') {
             steps {
+                echo '$path'
                 echo 'Setting up Python environment...'
-//                 bat "${PYTHON_PATH} -m venv venv"
-//                 bat "${PYTHON_PATH} -m pip install --upgrade pip"
-                bat "${PIP_PATH} install -r requirements.txt"
+                bat 'C:\\Python312\\python.exe -m venv venv'
+                bat 'venv\\Scripts\\python.exe -m pip install --upgrade pip'
+                bat 'venv\\Scripts\\pip.exe install -r requirements.txt'
             }
         }
 
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                // Your build steps here
+            }
+        }
 
-
-        stage('running ui test') {
+        stage('Test') {
             steps {
                 echo 'Testing..'
-                bat "${PYTHON_PATH}  api_test_runner.py"
+                bat "venv\\Scripts\\python.exe -m unittest Tests/test_api/test_runner.py"
             }
         }
 
@@ -36,6 +39,7 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
+            bat "rd /s /q venv"
         }
 
         success {
