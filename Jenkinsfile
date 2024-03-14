@@ -39,7 +39,6 @@ pipeline {
     post {
         always {
             echo 'Cleaning up...'
-            bat "rd /s /q venv"
         }
 
         success {
