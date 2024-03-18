@@ -1,0 +1,14 @@
+2024-03-13 14:01:52,338 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/invalid with body: {'attack': 'invalid', 'health': 'invalid'}
+2024-03-13 14:01:53,981 - INFO - Received response: 404
+2024-03-13 14:01:53,987 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: {'health': 5}
+2024-03-13 14:01:55,873 - INFO - Received response: 200
+2024-03-13 14:01:55,879 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: {'attack': 2}
+2024-03-13 14:01:57,139 - INFO - Received response: 200
+2024-03-13 14:01:57,144 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Warrior with body: {'cost': 3}
+2024-03-13 20:26:20,172 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/invalid with body: {'attack': 'invalid', 'health': 'invalid'}
+2024-03-13 20:26:21,645 - INFO - Received response: 404
+2024-03-13 20:26:21,659 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: {'health': 5}
+2024-03-13 20:26:25,019 - INFO - Received response: 200
+2024-03-13 20:26:25,036 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: {'attack': 2}
+2024-03-13 20:26:26,732 - INFO - Received response: 200
+2024-03-13 20:26:26,751 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Warrior with body: {'cost': 3}

@@ -34,6 +34,19 @@ pipeline {
 
         stage(' Running Tests') {
             steps {
+                script {
+                    parallel(
+                        'API Test': {
+                            bat "docker run --name api_test_runner ${IMAGE_NAME}:${TAG} python api_test_runner.py"
+                            bat "docker rm api_test_runner"
+                        },
+                        'Add Food to Meal Test': {
+                            bat "docker run --name add_food_to_meal_test_runner ${IMAGE_NAME}:${TAG} python add_food_to_meal_test_runner.py"
+                            bat "docker rm add_food_to_meal_test_runner"
+                        }
+                    )
+                }
+
                 echo 'Testing..'
                 bat "venv\\Scripts\\python.exe check_macro_calories_validity_test_runner.py"
             }

@@ -3,8 +3,8 @@
   "hub": "http://localhost:4444/wd/hub",
   "url": "https://www.eatthismuch.com/app/planner/today",
   "grid": true,
-  "parallel": true,
-  "serial": false,
+  "parallel": false,
+  "serial": true,
   "browser": "chrome",
   "platform": "windows",
   "browser_types": [
@@ -15,6 +15,7 @@
   "api_headers":{
     "X-RapidAPI-Key": "c67ad700cemsh5217e54bf1713cfp1ecedfjsndb9e5d800c06",
     "X-RapidAPI-Host": "omgvamp-hearthstone-v1.p.rapidapi.com"
-  }
+  },
 
+  "jira_mail": "hosamhegly@gmail.com"
 }

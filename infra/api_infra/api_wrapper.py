@@ -2,7 +2,7 @@ import requests
 import logging
 from Utils.json_reader import get_config_data
 from Utils.logging_setup import setup_logging
-
+from infra.jira_wrapper import *
 
 class APIWrapper:
 

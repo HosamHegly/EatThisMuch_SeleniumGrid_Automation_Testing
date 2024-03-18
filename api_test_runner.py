@@ -3,8 +3,9 @@ import unittest
 import inquirer
 from Utils.json_reader import get_config_data
 import concurrent.futures
+from tests.api_tests.performance_test import PerformanceTest
 
-
+tests = [PerformanceTest]
 def find_test_files():
     tests = []
     for file in os.listdir(os.path.join('.','tests','api_tests')):
@@ -83,8 +84,8 @@ if __name__ == "__main__":
     config = get_config_data()
     is_parallel = config["parallel"]
     is_serial = config["serial"]
-    test_files = find_test_files()
+
     if is_parallel:
-        run_tests_in_parallel(test_files)
+        run_tests_in_parallel(tests)
     else:
-        run_tests_in_serial(test_files)
+        run_tests_in_serial(tests)

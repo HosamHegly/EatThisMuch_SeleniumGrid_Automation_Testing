@@ -1,0 +1,132 @@
+2024-03-18 10:52:06,096 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/invalid with body: {'attack': 'invalid', 'health': 'invalid'}
+2024-03-18 10:52:06,096 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: {'attack': 2}
+2024-03-18 10:52:06,100 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Warrior with body: {'cost': 3}
+2024-03-18 10:52:06,101 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: {'health': 5}
+2024-03-18 10:52:07,845 - INFO - Received response: 404
+2024-03-18 10:52:07,851 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/warlock with body: {'health': 5, 'attack': 2, 'cost': 2}
+2024-03-18 10:52:08,398 - INFO - Received response: 200
+2024-03-18 10:52:08,405 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Death Knight with body: None
+2024-03-18 10:52:08,425 - INFO - Received response: 200
+2024-03-18 10:52:08,431 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Druid with body: None
+2024-03-18 10:52:08,488 - INFO - Received response: 200
+2024-03-18 10:52:08,493 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: None
+2024-03-18 10:52:09,457 - INFO - Received response: 200
+2024-03-18 10:52:09,465 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: None
+2024-03-18 10:52:11,005 - INFO - Received response: 200
+2024-03-18 10:52:11,016 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Paladin with body: None
+2024-03-18 10:52:11,486 - INFO - Received response: 200
+2024-03-18 10:52:11,492 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Priest with body: None
+2024-03-18 10:52:11,534 - INFO - Received response: 200
+2024-03-18 10:52:11,547 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Rogue with body: None
+2024-03-18 11:20:22,493 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:20:26,819 - INFO - Received response: 200
+2024-03-18 11:20:27,975 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:20:31,500 - INFO - Received response: 200
+2024-03-18 11:20:32,561 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:20:39,471 - INFO - Received response: 200
+2024-03-18 11:22:58,765 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:23:02,896 - INFO - Received response: 200
+2024-03-18 11:23:04,052 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:23:06,979 - INFO - Received response: 200
+2024-03-18 11:23:08,142 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:23:13,735 - INFO - Received response: 200
+2024-03-18 11:30:41,027 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:30:44,461 - INFO - Received response: 200
+2024-03-18 11:30:46,244 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:30:49,220 - INFO - Received response: 200
+2024-03-18 11:30:50,351 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:30:55,998 - INFO - Received response: 200
+2024-03-18 11:34:31,770 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:34:34,590 - INFO - Received response: 200
+2024-03-18 11:34:35,652 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:34:37,652 - INFO - Received response: 200
+2024-03-18 11:34:38,697 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:34:44,699 - INFO - Received response: 200
+2024-03-18 11:38:52,932 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:38:57,138 - INFO - Received response: 200
+2024-03-18 11:39:00,250 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:39:03,354 - INFO - Received response: 200
+2024-03-18 11:39:06,243 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:39:12,973 - INFO - Received response: 200
+2024-03-18 11:48:40,737 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:48:44,015 - INFO - Received response: 200
+2024-03-18 11:48:45,525 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:48:47,775 - INFO - Received response: 200
+2024-03-18 11:48:49,110 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:48:54,474 - INFO - Received response: 200
+2024-03-18 11:50:31,362 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:50:34,858 - INFO - Received response: 200
+2024-03-18 11:50:36,158 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:50:39,096 - INFO - Received response: 200
+2024-03-18 11:50:40,379 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:50:46,205 - INFO - Received response: 200
+2024-03-18 11:51:09,646 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 11:51:12,109 - INFO - Received response: 200
+2024-03-18 11:51:13,133 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 11:51:16,299 - INFO - Received response: 200
+2024-03-18 11:51:18,361 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 11:51:25,466 - INFO - Received response: 200
+2024-03-18 12:08:16,683 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 12:08:20,328 - INFO - Received response: 200
+2024-03-18 12:08:22,997 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 12:08:25,809 - INFO - Received response: 200
+2024-03-18 12:08:27,339 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 12:08:33,394 - INFO - Received response: 200
+2024-03-18 12:34:05,450 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 12:34:08,188 - INFO - Received response: 200
+2024-03-18 12:34:09,653 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 12:34:11,783 - INFO - Received response: 200
+2024-03-18 12:34:13,398 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 12:34:19,420 - INFO - Received response: 200
+2024-03-18 13:39:28,598 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 13:39:31,382 - INFO - Received response: 200
+2024-03-18 13:39:33,013 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 13:39:35,448 - INFO - Received response: 200
+2024-03-18 13:55:56,784 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 13:56:00,912 - INFO - Received response: 200
+2024-03-18 13:56:03,610 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 14:02:16,726 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 14:02:26,000 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: {'health': 5}
+2024-03-18 14:02:26,002 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/invalid with body: {'attack': 'invalid', 'health': 'invalid'}
+2024-03-18 14:02:26,004 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: {'attack': 2}
+2024-03-18 14:02:26,005 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Warrior with body: {'cost': 3}
+2024-03-18 14:02:27,499 - INFO - Received response: 404
+2024-03-18 14:02:27,510 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/warlock with body: {'health': 5, 'attack': 2, 'cost': 2}
+2024-03-18 14:02:28,712 - INFO - Received response: 200
+2024-03-18 14:02:28,722 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Death Knight with body: None
+2024-03-18 14:02:28,739 - INFO - Received response: 200
+2024-03-18 14:02:28,748 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Druid with body: None
+2024-03-18 14:02:28,794 - INFO - Received response: 200
+2024-03-18 14:02:28,807 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: None
+2024-03-18 14:02:29,181 - INFO - Received response: 200
+2024-03-18 14:02:29,190 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: None
+2024-03-18 14:02:31,391 - INFO - Received response: 200
+2024-03-18 14:02:31,409 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Paladin with body: None
+2024-03-18 14:02:32,127 - INFO - Received response: 200
+2024-03-18 14:02:32,146 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Priest with body: None
+2024-03-18 14:02:32,185 - INFO - Received response: 200
+2024-03-18 14:02:32,203 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Rogue with body: None
+2024-03-18 14:02:32,218 - INFO - Received response: 200
+2024-03-18 14:02:32,234 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Shaman with body: None
+2024-03-18 14:38:05,253 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/info with body: None
+2024-03-18 14:38:06,759 - INFO - Received response: 200
+2024-03-18 14:38:41,065 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 14:38:43,310 - INFO - Received response: 200
+2024-03-18 14:38:43,842 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 14:38:45,551 - INFO - Received response: 200
+2024-03-18 14:38:46,079 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 14:39:01,207 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/info with body: None
+2024-03-18 14:39:02,200 - INFO - Received response: 200
+2024-03-18 14:40:13,188 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/info with body: None
+2024-03-18 14:40:14,550 - INFO - Received response: 200
+2024-03-18 14:40:54,229 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/info with body: None
+2024-03-18 14:40:55,543 - INFO - Received response: 200
+2024-03-18 14:43:59,739 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 14:44:01,775 - INFO - Received response: 200
+2024-03-18 14:44:02,280 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 14:44:09,446 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-18 14:44:11,573 - INFO - Received response: 200
+2024-03-18 14:44:12,089 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-18 14:44:13,915 - INFO - Received response: 200
+2024-03-18 14:44:14,468 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-18 14:46:09,115 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None

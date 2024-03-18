@@ -1,0 +1,82 @@
+2024-03-12 11:39:37,242 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/invalid with body: {'attack': 'invalid', 'health': 'invalid'}
+2024-03-12 11:39:38,358 - INFO - Received response: 404
+2024-03-12 11:39:38,363 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: {'health': 5}
+2024-03-12 11:39:39,654 - INFO - Received response: 200
+2024-03-12 11:39:39,659 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: {'attack': 2}
+2024-03-12 11:39:40,893 - INFO - Received response: 200
+2024-03-12 11:39:40,899 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Warrior with body: {'cost': 3}
+2024-03-12 11:39:42,155 - INFO - Received response: 200
+2024-03-12 11:39:42,160 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/warlock with body: {'health': 5, 'attack': 2, 'cost': 2}
+2024-03-12 11:39:43,385 - INFO - Received response: 200
+2024-03-12 11:39:43,392 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Death Knight with body: None
+2024-03-12 11:39:44,920 - INFO - Received response: 200
+2024-03-12 11:39:44,926 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Druid with body: None
+2024-03-12 11:39:47,169 - INFO - Received response: 200
+2024-03-12 11:39:47,176 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Hunter with body: None
+2024-03-12 11:39:49,408 - INFO - Received response: 200
+2024-03-12 11:39:49,418 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Mage with body: None
+2024-03-12 11:39:51,621 - INFO - Received response: 200
+2024-03-12 11:39:51,630 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Paladin with body: None
+2024-03-12 11:39:54,000 - INFO - Received response: 200
+2024-03-12 11:39:54,008 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Priest with body: None
+2024-03-12 11:39:56,087 - INFO - Received response: 200
+2024-03-12 11:39:56,095 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Rogue with body: None
+2024-03-12 11:39:58,219 - INFO - Received response: 200
+2024-03-12 11:39:58,226 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Shaman with body: None
+2024-03-12 11:40:00,617 - INFO - Received response: 200
+2024-03-12 11:40:00,625 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Warlock with body: None
+2024-03-12 11:40:03,023 - INFO - Received response: 200
+2024-03-12 11:40:03,030 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Warrior with body: None
+2024-03-12 11:40:07,769 - INFO - Received response: 200
+2024-03-12 11:40:07,777 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Dream with body: None
+2024-03-12 11:40:10,792 - INFO - Received response: 200
+2024-03-12 11:40:10,798 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Neutral with body: None
+2024-03-12 11:40:32,527 - INFO - Received response: 200
+2024-03-12 11:40:32,568 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Whizbang with body: None
+2024-03-12 11:40:34,660 - INFO - Received response: 200
+2024-03-12 11:40:34,665 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/Demon Hunter with body: None
+2024-03-12 11:40:37,058 - INFO - Received response: 200
+2024-03-12 11:40:37,065 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/invalid with body: {'attack': 'invalid', 'health': 'invalid'}
+2024-03-12 11:40:38,042 - INFO - Received response: 404
+2024-03-12 11:40:38,047 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Beast with body: {'health': 5}
+2024-03-12 11:40:40,211 - INFO - Received response: 200
+2024-03-12 11:40:40,219 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Demon with body: {'attack': 2}
+2024-03-12 11:40:42,348 - INFO - Received response: 200
+2024-03-12 11:40:42,352 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Dragon with body: {'cost': 3, 'attack': 3}
+2024-03-12 11:40:44,047 - INFO - Received response: 200
+2024-03-12 11:40:44,052 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Pirate with body: {'health': 2, 'attack': 2, 'cost': 2}
+2024-03-12 11:40:45,816 - INFO - Received response: 200
+2024-03-12 11:40:45,821 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Orc with body: None
+2024-03-12 11:40:47,681 - INFO - Received response: 404
+2024-03-12 11:40:47,686 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Undead with body: None
+2024-03-12 11:40:50,235 - INFO - Received response: 200
+2024-03-12 11:40:50,242 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Murloc with body: None
+2024-03-12 11:40:52,226 - INFO - Received response: 200
+2024-03-12 11:40:52,232 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Demon with body: None
+2024-03-12 11:40:54,335 - INFO - Received response: 200
+2024-03-12 11:40:54,342 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Mech with body: None
+2024-03-12 11:40:56,473 - INFO - Received response: 200
+2024-03-12 11:40:56,480 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Elemental with body: None
+2024-03-12 11:40:58,927 - INFO - Received response: 200
+2024-03-12 11:40:58,934 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Beast with body: None
+2024-03-12 11:41:01,427 - INFO - Received response: 200
+2024-03-12 11:41:01,435 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Totem with body: None
+2024-03-12 11:41:03,569 - INFO - Received response: 200
+2024-03-12 11:41:03,575 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Pirate with body: None
+2024-03-12 11:41:05,923 - INFO - Received response: 200
+2024-03-12 11:41:05,929 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Dragon with body: None
+2024-03-12 11:41:08,151 - INFO - Received response: 200
+2024-03-12 11:41:08,157 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/All with body: None
+2024-03-12 11:41:09,458 - INFO - Received response: 200
+2024-03-12 11:41:09,463 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Quilboar with body: None
+2024-03-12 11:41:10,758 - INFO - Received response: 200
+2024-03-12 11:41:10,763 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/Naga with body: None
+2024-03-12 11:41:12,223 - INFO - Received response: 200
+2024-03-12 11:41:12,230 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/info with body: None
+2024-03-12 11:41:13,200 - INFO - Received response: 200
+2024-03-12 11:41:13,211 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/shaman with body: None
+2024-03-12 11:41:15,126 - INFO - Received response: 200
+2024-03-12 11:41:15,130 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/races/demon with body: None
+2024-03-12 11:41:16,834 - INFO - Received response: 200
+2024-03-12 11:41:16,839 - INFO - Making GET request to https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/spell with body: None
+2024-03-12 11:41:22,309 - INFO - Received response: 200
