@@ -18,15 +18,15 @@ pipeline {
 
         stage('Run Tests in Parallel') {
             steps {
+                script {
 
 
+                        'Add Food to Meal Test': {
+                            bat "docker run --name add_food_to_meal_test_runner ${IMAGE_NAME}:${TAG} python add_food_to_meal_test_runner.py"
+                            bat "docker rm add_food_to_meal_test_runner"
+                        }
 
-                    'Add Food to Meal Test': {
-                        bat "docker run --name add_food_to_meal_test_runner ${IMAGE_NAME}:${TAG} python add_food_to_meal_test_runner.py"
-                        bat "docker rm add_food_to_meal_test_runner"
-                    }
-
-
+                }
             }
         }
     }
