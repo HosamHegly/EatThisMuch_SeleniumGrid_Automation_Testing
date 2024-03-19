@@ -83,6 +83,7 @@ class PlannerPage(BasePage):
         return True
 
     def regenerate_meal_plan(self):
+        time.sleep(2)
         self.regen_button = WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.REGENERATE))
         self.regen_button.click()
         WebDriverWait(self._driver, 10).until(EC.element_to_be_clickable(self.REGENERATE_POPUP_BUTTON)).click()
@@ -97,4 +98,5 @@ class PlannerPage(BasePage):
         self.init_breakfast_list()
         for food in self.breakfast_list:
             food_list.append(food.text.lower())
+        print(food_list)
         return food_list

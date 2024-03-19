@@ -2,7 +2,7 @@
 
   "hub": "http://localhost:4444/wd/hub",
   "url": "https://www.eatthismuch.com/app/planner/today",
-  "grid": true,
+  "grid": false,
   "parallel": false,
   "serial": true,
   "browser": "chrome",
